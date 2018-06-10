@@ -1,5 +1,11 @@
 class P0kerhandsController < ApplicationController
   def home
-    @hands = Hand.new
+    @hands = params[:hands]
   end
+
+  def create
+    @hands = Hand.new(article_params)
+      render root_path
+  end
+
 end
