@@ -7,17 +7,11 @@
 <h1>pokerhands</h1>
 <div>
   <%= form_tag(root_path, method: "get") do %>
-    <%= text_field_tag(:hands) %>
+    <%= text_field_tag(:hands, @cards) %>
     <%= submit_tag("check") %>
   <% end %>
 </div>
 <p>
-  <%= @cards %>
-  <% @cards.each do |hand| %>
-    <%= hand %>
-  <% end %>
-  <%= @suits %>
-  <%= @nums %>
   <%= @result %>
 </p>
 </body>

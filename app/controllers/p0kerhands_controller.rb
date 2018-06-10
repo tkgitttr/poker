@@ -4,7 +4,7 @@ class P0kerhandsController < ApplicationController
     @suits = @cards.map { |c| c[0] }
     @nums  = @cards.map { |c| c[1].to_i }
 
-    if @suits.uniq.length == 1 && @nums.max - @nums.min == 4
+    if @suits.uniq.length == 1 && @nums.uniq.length == 5 && @nums.max - @nums.min == 4
       @result = 'ストレートフラッシュ'
     elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 4
       @result = 'フォー・オブ・ア・カインド'
@@ -12,7 +12,7 @@ class P0kerhandsController < ApplicationController
       @result = 'フルハウス'
     elsif @suits.uniq.length == 1
       @result = 'フラッシュ'
-    elsif @nums.max-@nums.min == 4
+    elsif @nums.uniq.length == 5 && @nums.max-@nums.min == 4
       @result = 'ストレート'
     elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 3
       @result = 'スリー・オブ・ア・カインド'
