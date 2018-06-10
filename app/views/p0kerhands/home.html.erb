@@ -5,9 +5,6 @@
 </head>
 <body>
 <h1>pokerhands</h1>
-<p>
-  This is the home page for the poker hands test.
-</p>
 <div>
   <%= form_tag(root_path, method: "get") do %>
     <%= text_field_tag(:hands) %>
@@ -15,7 +12,13 @@
   <% end %>
 </div>
 <p>
-  <%= @hands %>
+  <%= @cards %>
+  <% @cards.each do |hand| %>
+    <%= hand %>
+  <% end %>
+  <%= @suits %>
+  <%= @nums %>
+  <%= @result %>
 </p>
 </body>
 </html>
