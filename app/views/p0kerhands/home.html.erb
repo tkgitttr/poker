@@ -7,7 +7,8 @@
 <h1>pokerhands</h1>
 <div>
   <%= form_tag(root_path, method: "get") do %>
-    <%= text_field_tag(:hands, @cards) %>
+    <%= render 'shared/error_messages' %>
+    <%= text_field_tag(:cards, @cards) %>
     <%= submit_tag("check") %>
   <% end %>
 </div>

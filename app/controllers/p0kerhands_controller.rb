@@ -1,9 +1,17 @@
 class P0kerhandsController < ApplicationController
   def home
-    @cards = params[:hands].split
+
+    # 変数受け取り，設定
+    card_params = params[:cards]
+    if card_params.nil?
+      @cards = ['S1','H2', 'D3', 'C4', 'S5'] #後ほど変更する必要あり
+    else
+      @cards = card_params.split
+    end
     @suits = @cards.map { |c| c[0] }
     @nums  = @cards.map { |c| c[1].to_i }
 
+    # カードの役を判定する
     if @suits.uniq.length == 1 && @nums.uniq.length == 5 && @nums.max - @nums.min == 4
       @result = 'ストレートフラッシュ'
     elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 4
@@ -24,10 +32,5 @@ class P0kerhandsController < ApplicationController
       @result = 'ハイカード'
     end
   end
-
-  # def create
-  #     @cards = Hand.new(params[:hands])
-  #     render root_path
-  # end
 
 end
