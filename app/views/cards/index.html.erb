@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home | Pokerhands</title>
+</head>
+<body>
+<h1>pokerhands</h1>
+<div>
+  <!-- #これがいいのかは不明．ここに具体的にH1とか入れる -->
+  <% @card = Card.new unless @card %>
+  <%#= form_for(@card, url: root_path, action: "create") do |f| %>
+  <%= form_for(@card, action: "create") do |f| %>
+    <%#= render 'shared/error_messages' %>
+    <%= f.text_field :all_card, value: session[:all_card] %>
+    <%= f.submit("check") %>
+  <% end %>
+</div>
+<p>
+  <%= @result %>
+</p>
+</body>
+</html>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root 'p0kerhands#home'
-  get 'p0kerhands/home'
+  root 'cards#index'
+  get  'cards/index'
+  post "/" => "cards#index"
+  resources :cards
 end
