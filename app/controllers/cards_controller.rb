@@ -3,9 +3,14 @@ class CardsController < ApplicationController
   def index
 
     # 変数受け取り，設定
-    # @card = Card.new # いらないみたい？
+    @card = Card.new # いらないみたい？
     # session
-    @card = session[:all_card]
+    # session.clear #debag
+    if session[:all_card].nil?
+      @card[:all_card] = "S1 S2 S3 S4 S5"
+    else
+      @card[:all_card] = session[:all_card]
+    end
     @result = session[:result]
     # card_params = params[:card][:all_card] #ここは変更しないといけない
     # @card = Card.new({all_card: 'S1 A2 D5 C13 A4'}) #後ほど変更する必要あり
@@ -56,12 +61,14 @@ class CardsController < ApplicationController
     # 変数受け取り，設定
     # @card = Card.new # いらないみたい？
     # card_params = params[:card] #ここは変更しないといけない
-    @card = Card.new({all_card: 'S1 A2 D5 C13 A4'})#後ほど変更する必要あり
-    if card_params
-      @card[:all_card] = card_params
-    end
+    @card = Card.new #({all_card: 'S1 A2 D5 C13 A4'})#後ほど変更する必要あり
+      if card_params
+        @card[:all_card] = card_params[:all_card]
+      end
     # sessionに保存
-    session[:all_card] = @card[:all_cald]
+    # session = {} #前回のセッションを切る？
+    session[:all_card] = @card[:all_card]
+    # error
     # カードを1～5枚目に分解する
     @card[:all_card].split(" ").each_with_index do |c,ind|
       @card[:first_card]  = c if ind == 0
