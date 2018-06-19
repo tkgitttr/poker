@@ -8,6 +8,12 @@ class CardsController < ApplicationController
       @card[:all_card] = "S1 S2 S3 S4 S5"
     else
       @card[:all_card] = session[:all_card]
+      @card[:first_card] = session[:first_card] #first_cardなどもセッションに保存したい
+      @card[:second_card] = session[:second_card]
+      @card[:third_card] = session[:third_card]
+      @card[:fourth_card] = session[:fourth_card]
+      @card[:fifth_card] = session[:fifth_card]
+      @card.save #createでsaveしてもerrorが引っかからないので，こっち
     end
     @result = session[:result]
   end
@@ -54,6 +60,11 @@ class CardsController < ApplicationController
 
     # sessionに保存
     session[:all_card] = @card[:all_card]
+    session[:first_card] = @card[:first_card]
+    session[:second_card] = @card[:second_card]
+    session[:third_card] = @card[:third_card]
+    session[:fourth_card] = @card[:fourth_card]
+    session[:fifth_card] = @card[:fifth_card]
     session[:result] = @result
 
     # indexにリダイレクト

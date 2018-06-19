@@ -1,0 +1,6 @@
+
+.field_with_errors {
+    background-color: red;
+    font-size: x-small;
+    color: red;
+}

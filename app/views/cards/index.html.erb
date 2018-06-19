@@ -6,10 +6,22 @@
 <body>
 <h1>pokerhands</h1>
 <div>
-  <%= form_for(@card, action: "create") do |f| %>
+  <%= form_for(@card, url: cards_path, action: "cards#create", html: {method: "post"}) do |f| %>
     <%#= render 'shared/error_messages' %>
+    <%# スタイルシートが反映されていないので要修正 %>
+    <%= stylesheet_link_tag "custom", :media => "all" %>
     <%= f.text_field :all_card, value: @card[:all_card] %>
     <%= f.submit("check") %>
+<!--    <%# raise() %>>-->
+    <% if @card.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% @card.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 </div>
 <p>
