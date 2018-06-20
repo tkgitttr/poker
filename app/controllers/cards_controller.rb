@@ -5,7 +5,7 @@ class CardsController < ApplicationController
     @card = Card.new
     # session.clear #debag
     if session[:all_card].nil?
-      @card[:all_card] = "S1 S2 S3 S4 S5"
+      @card[:all_card] = ""
       @result = ""
     else
       @card[:all_card]    = session[:all_card]

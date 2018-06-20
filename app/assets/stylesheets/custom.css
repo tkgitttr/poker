@@ -51,7 +51,7 @@ p {
 }
 
 .form-control {
-    position: center;
+    text-align: center;
     margin: 0 auto;
     display: inline-block;
 }

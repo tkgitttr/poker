@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Bootstrapの読み込み -->
-    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
-  <!-- Flat-UIの読み込み -->
-    <link href="css/flat-ui.css" rel="stylesheet">
   <title>Home | Pokerhands</title>
 </head>
 <body>
@@ -14,7 +10,7 @@
     <%#= render 'shared/error_messages' %>
     <%# スタイルシートが反映されていないので要修正 %>
     <%= stylesheet_link_tag "custom", :media => "all" %>
-    <p><%= f.text_field :all_card, value: @card[:all_card],class: "form-control input-hg", placeholder: "Huge" %></p>
+    <p><%= f.text_field :all_card, value: @card[:all_card],class: "form-control input-hg", placeholder: "S10 H11 D12 C13 H1" %></p>
     <p><button class="btn btn-hg btn-primary">
       <%#= f.submit("check") %>
       check
