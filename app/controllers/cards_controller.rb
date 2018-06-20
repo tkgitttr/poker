@@ -40,7 +40,7 @@ class CardsController < ApplicationController
 
     # カードをスートと数字に分解する
     @suits = card_params[:all_card].split(" ").map{ |c| c[0] }
-    @nums = card_params[:all_card].split(" ").map{ |c| c[1].to_i }
+    @nums = card_params[:all_card].split(" ").map{ |c| c[1..-1].to_i }
 
     # カードの役を判定する
     if @suits.uniq.length == 1 && @nums.uniq.length == 5 && @nums.max - @nums.min == 4
