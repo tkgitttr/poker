@@ -20,6 +20,9 @@ module Poker
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
       %Q(#{html_tag}).html_safe
     end
+
+    # Flat-UI
+    # config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 end
 

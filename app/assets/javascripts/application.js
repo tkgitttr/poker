@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// bootstrapを導入する
+//bbb= require jquery
+//bbb= require bootstrap-sprockets
+
+// Flat-UIを導入する
+//??= require flat-ui
