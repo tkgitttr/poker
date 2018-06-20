@@ -22,7 +22,7 @@ module Poker
     end
 
     # Flat-UI
-    # config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 end
 

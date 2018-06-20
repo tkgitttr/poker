@@ -8,7 +8,6 @@
 <div>
   <%= form_for(@card, url: cards_path, action: "cards#create", html: {method: "post"}) do |f| %>
     <%#= render 'shared/error_messages' %>
-    <%# スタイルシートが反映されていないので要修正 %>
     <%= stylesheet_link_tag "custom", :media => "all" %>
     <p><%= f.text_field :all_card, value: @card[:all_card],class: "form-control input-hg", placeholder: "S10 H11 D12 C13 H1" %></p>
     <p><button class="btn btn-hg btn-primary">
@@ -27,8 +26,8 @@
     <% end %>
   <% end %>
 </div>
-<p>
+<h2>
   <%= @result %>
-</p>
+</h2>
 </body>
 </html>
