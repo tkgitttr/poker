@@ -37,10 +37,16 @@ p {
     text-align: center;
 }
 
+ul {
+    list-style-type: none;
+}
 
-.field_with_errors {
-    background-color: red;
-    font-size: x-small;
+#error_explanation {
+    /*padding: 0 20em*/
+    background-size: 20px 20px;
+    background-color: pink;
+    font-size: small;
+    text-align: center;
     color: red;
 }
 
@@ -54,4 +60,11 @@ p {
     text-align: center;
     margin: 0 auto;
     display: inline-block;
+}
+
+.box3 {
+    padding: 0.5em 1em;
+    margin: 2em 20em;
+    color: #2c2c2f;
+    background: #cde4ff;/*背景色*/
 }

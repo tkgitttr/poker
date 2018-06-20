@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Check a Poker Hand</h1>
-<div>
+<div class="box3">
   <%= form_for(@card, url: cards_path, action: "cards#create", html: {method: "post"}) do |f| %>
     <%#= render 'shared/error_messages' %>
     <%= stylesheet_link_tag "custom", :media => "all" %>
@@ -25,9 +25,9 @@
       </div>
     <% end %>
   <% end %>
+  <h2>
+    <%= @result %>
+  </h2>
 </div>
-<h2>
-  <%= @result %>
-</h2>
 </body>
 </html>
