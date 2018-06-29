@@ -56,6 +56,8 @@ RSpec.describe Card, type: :model do
                          fourth_card: "S4", fifth_card: nil})
         expect(card).not_to be_valid
       end
+
+      it "カードが重複していてエラーになる" #あとで追加
     end
 
   #errrorメッセージなどはここでテストすべきか？
