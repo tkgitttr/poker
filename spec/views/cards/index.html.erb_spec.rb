@@ -16,7 +16,7 @@ RSpec.describe "cards/index", type: :view do
 
   describe "静的なページ" do
     it "タイトルが表示されている" do
-      visit '/'
+      visit root_path
       expect(page).to have_title 'Home | Pokerhands'
     end
 
