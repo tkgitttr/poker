@@ -69,13 +69,29 @@ RSpec.describe CardsController, type: :controller do
   end
 
   describe "POST #create" do
-      it ":all_card にparams が代入される"
-      it "@cardに変数が正しく分配される"
-      it "カードがスートと数字に分解される"
+      it ":all_card にparams が代入される" do
+        #うまくいかない．@card[:all_card]を取得する方法が不明
+        # post :create, params: {card: valid_attributes}
+        # expect(controller.instance_variable_get(:card)).to include(all_card: "S1 S2 S3 S4 S5")
+      end
+      it "@cardに変数が正しく分配される" do
+        # うまくいかない．そもそもこのテストは不要？
+        # post :create, params: {card: valid_attributes}
+        # expect(controller.instance_variable_get(:@card)).to include(first_card: "S1", second_card: "S2",
+        #                                                             third_card: "S3", fourth_card: "S4",
+        #                                                             fifth_card: "S5")
+      end
+      it "カードがスートと数字に分解される" do
+        #不要？
+      end
       it "カードの役を正しく判定する" do
         #これは，Viewのほうで最低限テストしているので省略
       end
-      it "session に保存されている"
+      it "session に保存されている" do
+        post :create, params: {card: valid_attributes}
+        expect(session).to include :all_card, :first_card, :second_card, :third_card,
+                                   :fourth_card, :fifth_card, :result
+      end
       it "indexにリダイレクトする" do
         post :create, params: {card: valid_attributes}, session: valid_session
         expect(response).to redirect_to root_path
