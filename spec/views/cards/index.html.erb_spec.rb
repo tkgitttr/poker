@@ -41,7 +41,7 @@ RSpec.describe "cards/index", type: :view do
     end
   end
 
-  context "正しいフォーマットでカードを入力したとき"
+  context "正しいフォーマットでカードを入力したとき" do
     it "ストレートフラッシュが表示されている" do
       fill_in "card[all_card]", with: "S1 S2 S3 S4 S5"
       click_button "check"
@@ -87,8 +87,9 @@ RSpec.describe "cards/index", type: :view do
       click_button "check"
       expect(page).to have_selector 'h2', text: "ハイカード"
     end
+  end
 
-  context "誤ったフォーマットでカードを入力したとき"
+  context "誤ったフォーマットでカードを入力したとき" do
     it "first_cardのエラーメッセージが表示されている" do
       fill_in "card[all_card]", with: "S20 D1 C1 H1 S5"
       click_button "check"
@@ -129,5 +130,5 @@ RSpec.describe "cards/index", type: :view do
       click_button "check"
       expect(page).to have_selector 'div#error_explanation', text: '5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）'
     end
-
+  end
 end
