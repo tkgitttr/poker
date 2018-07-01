@@ -1,5 +1,5 @@
 /*!
- * Flat UI Pro v1.3.2 (https://designmodo.com/flat)
+ * Flat UI Pro ver1.3.2 (https://designmodo.com/flat)
  * Copyright 2013-2014 Designmodo, Inc.
  */
 /*!
@@ -7914,7 +7914,7 @@ var Tab = function ($$$1) {
   var maxMajor = 4;
 
   if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-    throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
+    throw new Error('Bootstrap\'s JavaScript requires at least jQuery ver1.9.1 but less than v4.0.0');
   }
 })($);
 
@@ -16141,7 +16141,7 @@ the specific language governing permissions and limitations under the Apache Lic
 	 *     row will be invalidated
 	 * @memberof DataTable#oApi
 	 *
-	 * @todo For the modularisation of v1.11 this will need to become a callback, so
+	 * @todo For the modularisation of ver1.11 this will need to become a callback, so
 	 *   the sort and filter methods can subscribe to it. That will required
 	 *   initialisation options for sorting, which is why it is not already baked in
 	 */
@@ -17329,7 +17329,7 @@ the specific language governing permissions and limitations under the Apache Lic
 	 */
 	function _fnAjaxUpdateDraw ( settings, json )
 	{
-		// v1.10 uses camelCase variables, while 1.9 uses Hungarian notation.
+		// ver1.10 uses camelCase variables, while 1.9 uses Hungarian notation.
 		// Support both
 		var compat = function ( old, modern ) {
 			return json[old] !== undefined ? json[old] : json[modern];
@@ -19962,7 +19962,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    'current' and filter is 'applied', regardless of what they might be given as.
 		 *  @returns {object} jQuery object, filtered by the given selector.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20012,7 +20012,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    selector, were not TR, TD or TH elements in the DataTable, they will have a null
 		 *    entry in the array.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20079,7 +20079,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    <i>aoData</i> ({@link DataTable.models.oSettings}) that have been added to
 		 *    the table.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    // Global var for counter
@@ -20124,7 +20124,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 * parent element changes (for example a window resize).
 		 *  @param {boolean} [bRedraw=true] Redraw the table or not, you will typically want to
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20158,7 +20158,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 * Quickly and simply clear a table
 		 *  @param {bool} [bRedraw=true] redraw the table or not
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20184,7 +20184,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {node} nTr the table row to 'close'
 		 *  @returns {int} 0 on success, or 1 if failed (can't find the row)
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20216,7 +20216,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {bool} [redraw=true] Redraw the table or not
 		 *  @returns {array} The row that was deleted
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20252,7 +20252,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 * enhancements, alterations to the DOM structure of the table and event listeners.
 		 *  @param {boolean} [remove=false] Completely remove the table from the DOM
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20271,7 +20271,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 * Redraw the table
 		 *  @param {bool} [complete=true] Re-filter and resort (if enabled) the table before the draw.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20298,7 +20298,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {bool} [bShowGlobal=true] Show the input global filter in it's input box(es)
 		 *  @param {bool} [bCaseInsensitive=true] Do case-insensitive matching (true) or not (false)
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20336,7 +20336,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    returned. If mRow is defined, just data for that row, and is iCol is
 		 *    defined, only data for the designated cell is returned.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    // Row data
@@ -20384,7 +20384,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @returns {array|node} If iRow is undefined, returns an array of all TR elements
 		 *    in the table's body, or iRow is defined, just the TR element requested.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20412,7 +20412,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    if given as a cell, an array of [row index, column index (visible),
 		 *    column index (all)] is given.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20458,7 +20458,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {node} nTr the table row to check
 		 *  @returns {boolean} true if the row is currently open, false otherwise
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20494,7 +20494,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    first parameter, is not found in the table, this method will silently
 		 *    return.
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20530,7 +20530,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    or page number to jump to (integer), note that page 0 is the first page.
 		 *  @param {bool} [bRedraw=true] Redraw the table or not
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20554,7 +20554,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {bool} bShow Show (true) or hide (false) the column
 		 *  @param {bool} [bRedraw=true] Redraw the table or not
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20579,7 +20579,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @returns {object} DataTables settings object. See
 		 *    {@link DataTable.models.oSettings}
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20601,7 +20601,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {int} iCol the data index to sort on. Note that this will not match the
 		 *    'display index' if you have hidden data entries
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20623,7 +20623,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {int} iColumn the column that a click on this node will sort on
 		 *  @param {function} [fnCallback] callback function when sort is run
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20652,7 +20652,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *  @param {bool} [bAction=true] Perform pre-draw actions or not
 		 *  @returns {int} 0 on success, 1 on error
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -20692,7 +20692,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 *    version, or false if this version of DataTales is not suitable
 		 *  @method
 		 *  @dtopt API
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 *
 		 *  @example
 		 *    $(document).ready(function() {
@@ -24157,8 +24157,8 @@ the specific language governing permissions and limitations under the Apache Lic
 
 	/*
 	 * Developer note: The properties of the object below are given in Hungarian
-	 * notation, that was used as the interface for DataTables prior to v1.10, however
-	 * from v1.10 onwards the primary interface is camel case. In order to avoid
+	 * notation, that was used as the interface for DataTables prior to ver1.10, however
+	 * from ver1.10 onwards the primary interface is camel case. In order to avoid
 	 * breaking backwards compatibility utterly with this change, the Hungarian
 	 * version is still, internally the primary interface, but is is not documented
 	 * - hence the @name tags in each doc comment. This allows a Javascript function
@@ -28311,7 +28311,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		 * * `{array}` - A nested array containing the above elements to add a
 		 *   containing 'DIV' element (might be useful for styling).
 		 *
-		 * Note that DataTables v1.9- used this object slightly differently whereby
+		 * Note that DataTables ver1.9- used this object slightly differently whereby
 		 * an object with two functions would be defined for each plug-in. That
 		 * ability is still supported by DataTables 1.10+ to provide backwards
 		 * compatibility, but this option of use is now decremented and no longer
@@ -28565,7 +28565,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		/**
 		 * Index for what 'this' index API functions should use
 		 *  @type int
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 */
 		iApiIndex: 0,
 
@@ -28573,7 +28573,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		/**
 		 * jQuery UI class container
 		 *  @type object
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 */
 		oJUIClasses: {},
 
@@ -28581,7 +28581,7 @@ the specific language governing permissions and limitations under the Apache Lic
 		/**
 		 * Software version
 		 *  @type string
-		 *  @deprecated Since v1.10
+		 *  @deprecated Since ver1.10
 		 */
 		sVersion: DataTable.version
 	};
