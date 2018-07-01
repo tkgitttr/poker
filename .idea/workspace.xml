@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2eaa158-df22-4a3b-82f9-045985f03771" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -38,38 +38,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html.erb_spec.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spec/views/cards/index.html.erb_spec.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/config/routes.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="card_spec.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/spec/models/card_spec.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cards_controller_spec.rb" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+                <state relative-caret-position="119">
+                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
                 </state>
               </provider>
             </entry>
@@ -78,7 +51,7 @@
             <entry file="file://$PROJECT_DIR$/app/models/card.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="340">
-                  <caret line="20" column="74" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="74" />
+                  <caret line="20" column="74" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="74" />
                 </state>
               </provider>
             </entry>
@@ -100,7 +73,7 @@
             <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+                  <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -108,7 +81,7 @@
           <file leaf-file-name="cards_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
+                <state relative-caret-position="816">
                   <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
                 </state>
               </provider>
@@ -176,6 +149,9 @@
         <option value="$PROJECT_DIR$/app/views/cards/index.html.erb" />
         <option value="$PROJECT_DIR$/spec/views/cards/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/views/cards/new.html.erb_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/views/cards/edit.html.erb_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/views/cards/show.html.erb_spec.rb" />
       </list>
     </option>
   </component>
@@ -243,54 +219,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="cards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -432,12 +360,12 @@
       <workItem from="1528899892337" duration="2407000" />
       <workItem from="1529157032754" duration="13888000" />
       <workItem from="1529280138609" duration="4461000" />
-      <workItem from="1529286316641" duration="91434000" />
+      <workItem from="1529286316641" duration="95349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151627000" />
+    <option name="totallyTimeSpent" value="155542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,51 +379,28 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32838285" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50907713" side_tool="true" weight="0.32838285" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32838285" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49016643" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49092284" visible="true" weight="0.32343236" />
-      <window_info anchor="bottom" id="Database Console" weight="1.0" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987715" weight="0.18835099" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
-      <window_info id="Structure" order="1" sideWeight="0.5012285" side_tool="true" weight="0.18835099" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49924356" weight="0.32838285" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="bottom" id="Database Console" order="0" weight="1.0" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49016643" weight="0.32838285" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.18835099" />
-      <window_info id="Structure" order="1" sideWeight="0.5012285" side_tool="true" weight="0.18835099" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32838285" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50907713" side_tool="true" weight="0.32838285" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32838285" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49092284" visible="true" weight="0.32343236" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50907713" side_tool="true" weight="0.32838285" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32838285" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49924356" weight="0.32838285" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49016643" weight="0.32838285" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49092284" visible="true" weight="0.32343236" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.669967" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.18835099" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32838285" />
+      <window_info id="Structure" order="1" sideWeight="0.5012285" side_tool="true" weight="0.18835099" />
       <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49924356" weight="0.32838285" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -513,6 +418,17 @@
               </option>
               <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
                 <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="rspec" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
               </option>
               <option name="COLUMN_ORDER">
                 <list>
@@ -532,23 +448,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -795,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://8c1f904a-0e66-4415-81ed-cb4faaba352f/schema/main/table/cards">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59">
@@ -823,52 +715,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/card_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/views/cards/index.html.erb_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/card.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="74" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="74" />
+          <caret line="20" column="74" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
+    <entry file="file://$PROJECT_DIR$/spec/views/cards/show.html.erb_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/views/cards/new.html.erb_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/views/cards/edit.html.erb_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+        <state relative-caret-position="48">
+          <caret line="77" column="31" selection-start-line="77" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/views/cards/index.html.erb_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8c1f904a-0e66-4415-81ed-cb4faaba352f/schema/main/table/cards">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
