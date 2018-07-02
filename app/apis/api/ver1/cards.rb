@@ -23,7 +23,7 @@ module API
           first_card = cards_params[:first_card]
           @cards = [ Card.first, Card.second]
           @cards[0].first_card = first_card #paramから受けとったものを反映
-          # @cards.save #不要
+          # @cards.save #不要.
         end
 
       end
