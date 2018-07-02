@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2eaa158-df22-4a3b-82f9-045985f03771" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/apis/api/ver1/cards.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/apis/api/ver1/cards.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/apis/api/ver1/hoge.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/apis/api/ver1/hoge.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/cards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/cards_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/api/ver1/index.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/ver1/index.jbuilder" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -67,7 +63,7 @@
             <entry file="file://$PROJECT_DIR$/app/views/api/ver1/index.jbuilder">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="51">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -75,10 +71,10 @@
           <file leaf-file-name="cards.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
+                <state relative-caret-position="190">
+                  <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
                   <folding>
-                    <marker date="1530534795658" expanded="true" signature="787:843" ph="..." />
+                    <marker date="1530537477297" expanded="true" signature="1319:1375" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -506,12 +502,12 @@
       <workItem from="1528899892337" duration="2407000" />
       <workItem from="1529157032754" duration="13888000" />
       <workItem from="1529280138609" duration="4461000" />
-      <workItem from="1529286316641" duration="121733000" />
+      <workItem from="1529286316641" duration="124404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181926000" />
+    <option name="totallyTimeSpent" value="184597000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,9 +527,9 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32838285" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49016643" weight="0.32838285" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49016643" weight="0.27062705" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49016643" visible="true" weight="0.27062705" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.669967" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987715" weight="0.18835099" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.18835099" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
@@ -548,29 +544,6 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.669967" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49016643" weight="0.32838285" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987715" visible="true" weight="0.18835099" />
-      <window_info id="Structure" order="1" sideWeight="0.5012285" side_tool="true" weight="0.18835099" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32838285" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32838285" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49016643" weight="0.27062705" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5098336" side_tool="true" weight="0.27062705" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32838285" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49924356" weight="0.32838285" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -948,16 +921,16 @@
     <entry file="file://$PROJECT_DIR$/app/views/api/ver1/index.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="190">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           <folding>
-            <marker date="1530534795658" expanded="true" signature="787:843" ph="..." />
+            <marker date="1530537477297" expanded="true" signature="1319:1375" ph="..." />
           </folding>
         </state>
       </provider>
