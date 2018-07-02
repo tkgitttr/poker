@@ -27,6 +27,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # grape(api)
 gem 'grape'
+gem 'grape-jbuilder'
+gem "hashie" #このgemはgrape-jbuilderとセットな模様
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -29,9 +29,9 @@ module Poker
     config.autoload_paths += Dir[Rails.root.join('app', 'apis', '*')]
 
     # Grape+JBuilderを使うための設定
-    # config.middleware.use(Rack::Config) do |env|
-    #   env['api.tilt.root'] = Rails.root.join 'app', 'views', 'api'
-    # end
+    config.middleware.use(Rack::Config) do |env|
+      env['api.tilt.root'] = Rails.root.join 'app', 'views', 'api'
+    end
 
   end
 end
