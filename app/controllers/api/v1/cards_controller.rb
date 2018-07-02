@@ -1,4 +1,6 @@
 class Api::V1::CardsController < ApplicationController
+  # これは，RailsAPIを使用する場合なので，いらないはず
+  # controllers/api自体，完成した後に消す
 
   #CSRF対策から，indexアクションを除外してアクセス可能にする
   protect_from_forgery :except => [:index]
@@ -12,7 +14,6 @@ class Api::V1::CardsController < ApplicationController
     # render json: @cards
     @hoge = Hoge.all
     render json: @hoge
-
 
     # puts "cards controller works!" #これは表示されない
   end

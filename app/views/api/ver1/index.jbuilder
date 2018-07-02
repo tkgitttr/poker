@@ -1,4 +1,3 @@
-json.array! @cards do |card|
-  json.id   card.id
-  json.name card.name
+json.cards @cards do |card|
+  json.(card, :first_card, :second_card)
 end

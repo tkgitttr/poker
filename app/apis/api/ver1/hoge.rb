@@ -3,8 +3,8 @@ module API
     # class Cards < Grape::API
       class Hoge
         #modelのpathが結びついてない
-        @hoge = Hoge.new(name: "foobar", text: "hogehoge")
-        @hoge.save
+        @hoge = Hoge.new#(name: "foobar", text: "hogehoge")
+        # @hoge.save
       end
     # end
   end
