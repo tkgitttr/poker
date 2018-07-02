@@ -7,7 +7,7 @@ module API
       helpers do
         #Strong Parametersの設定
         def cards_params
-          ActionController::Parameters.new(params).permit(:first_card, :second_card)
+          ActionController::Parameters.new(params).permit(cards: [])
         end
       end
 
@@ -20,12 +20,15 @@ module API
 
         post '/check', jbuilder: 'ver1/index' do
           # @cards = { "cards": [ "H1 H13 H12 H11 H10", "H9 C9 S9 H2 C2", "C13 D12 C11 H8 H7" ,"post"] }
-          first_card = cards_params[:first_card]
-          @cards = [ Card.first, Card.second]
-          @cards[0].first_card = first_card #paramから受けとったものを反映
+          # cards_params[:cards].map do |cards|
+          #   @card = Card.new(all_card: cards)
+          # end
+          @cards = cards_params[:cards]
+          # @cards = [ Card.first, Card.second]
+          # first_card = cards_params[:first_card]
+          # @cards[0].first_card = first_card #paramから受けとったものを反映
           # @cards.save #不要.
         end
-
       end
 
       # /api/ver1/cards/
