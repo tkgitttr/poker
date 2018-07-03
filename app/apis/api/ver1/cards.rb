@@ -36,7 +36,8 @@ module API
 
             # カードの役を判定する
             # ストレートフラッシュの判定，13，１，２，，，のような飛びに対応していないので修正
-            if @suits.uniq.length == 1 && @nums.uniq.length == 5 && @nums.max - @nums.min == 4
+            if (@suits.uniq.length == 1 && @nums.uniq.length == 5) &&
+                (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
               @hand[ind] = 'ストレートフラッシュ'
               @rank[ind] = 9
             elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 4
@@ -48,7 +49,8 @@ module API
             elsif @suits.uniq.length == 1
               @hand[ind] = 'フラッシュ'
               @rank[ind] = 6
-            elsif @nums.uniq.length == 5 && @nums.max-@nums.min == 4
+            elsif @nums.uniq.length == 5 &&
+                (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
               @hand[ind] = 'ストレート'
               @rank[ind] = 5
             elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 3

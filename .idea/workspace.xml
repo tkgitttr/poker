@@ -71,10 +71,10 @@
           <file leaf-file-name="cards.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+                <state relative-caret-position="238">
+                  <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
                   <folding>
-                    <marker date="1530594977060" expanded="true" signature="3443:3499" ph="..." />
+                    <marker date="1530595932445" expanded="true" signature="3561:3617" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -504,12 +504,12 @@
       <workItem from="1528899892337" duration="2407000" />
       <workItem from="1529157032754" duration="13888000" />
       <workItem from="1529280138609" duration="4461000" />
-      <workItem from="1529286316641" duration="132994000" />
+      <workItem from="1529286316641" duration="133948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193187000" />
+    <option name="totallyTimeSpent" value="194141000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -941,10 +941,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        <state relative-caret-position="238">
+          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
           <folding>
-            <marker date="1530594977060" expanded="true" signature="3443:3499" ph="..." />
+            <marker date="1530595932445" expanded="true" signature="3561:3617" ph="..." />
           </folding>
         </state>
       </provider>

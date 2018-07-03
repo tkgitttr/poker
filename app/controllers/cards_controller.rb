@@ -44,7 +44,8 @@ class CardsController < ApplicationController
 
     # カードの役を判定する
     # ストレートフラッシュの判定，13，１，２，，，のような飛びに対応していないので修正
-    if @suits.uniq.length == 1 && @nums.uniq.length == 5 && @nums.max - @nums.min == 4
+    if (@suits.uniq.length == 1 && @nums.uniq.length == 5) &&
+        (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
       @result = 'ストレートフラッシュ'
     elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 4
       @result = 'フォー・オブ・ア・カインド'
@@ -52,7 +53,8 @@ class CardsController < ApplicationController
       @result = 'フルハウス'
     elsif @suits.uniq.length == 1
       @result = 'フラッシュ'
-    elsif @nums.uniq.length == 5 && @nums.max-@nums.min == 4
+    elsif @nums.uniq.length == 5 &&
+        (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
       @result = 'ストレート'
     elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 3
       @result = 'スリー・オブ・ア・カインド'
