@@ -3,8 +3,7 @@ json.set! :result do
   json.array! @result, :card, :hand, :best
 end
 json.set! :error do
-  json.ignore_nil!
-  json.array! @errors#, :card, :msg
+  json.array! @errors unless @errors.nil? #, :card, :msg
 end
 
 

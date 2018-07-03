@@ -39,8 +39,9 @@ module API
               @result[ind] = { card: card }
             else
               @errors[ind] = { card: card }
-              @errors[ind][:msg] = @card.errors.full_messages #エラーメッセージの取得方法?
+              @errors[ind][:msg] = @card.errors.full_messages
             end
+            @errors.compact! #nilを消す
           end
 
           # ここに，handを判定するロジックと,bestを判定するロジックを書く
