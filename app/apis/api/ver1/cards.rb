@@ -19,11 +19,24 @@ module API
         end
 
         post '/check', jbuilder: 'ver1/index' do
+
+          @result = []
+          cards_params[:cards].each_with_index do |card,ind|
+            @result[ind] = {card: card, hand: "ストレートフラッシュ", best: false }
+            # この記法はうまくいかない（消して良い)
+            # @card[ind] = card
+            # @hand[ind] = "ストレートフラッシュ"
+            # @best[ind] = false
+          end
+          # @card = {}
+          # @hand = {}
+          # @best = {}
+
+          @cards = cards_params[:cards]
           # @cards = { "cards": [ "H1 H13 H12 H11 H10", "H9 C9 S9 H2 C2", "C13 D12 C11 H8 H7" ,"post"] }
           # cards_params[:cards].map do |cards|
           #   @card = Card.new(all_card: cards)
           # end
-          @cards = cards_params[:cards]
           # @cards = [ Card.first, Card.second]
           # first_card = cards_params[:first_card]
           # @cards[0].first_card = first_card #paramから受けとったものを反映
