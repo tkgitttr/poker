@@ -22,6 +22,7 @@ module API
 
           @result = []
           @hand = []
+          @rank = []
           cards_params[:cards].each_with_index do |card,ind|
             @result[ind] = { card: card }
           end
@@ -37,28 +38,41 @@ module API
             # ストレートフラッシュの判定，13，１，２，，，のような飛びに対応していないので修正
             if @suits.uniq.length == 1 && @nums.uniq.length == 5 && @nums.max - @nums.min == 4
               @hand[ind] = 'ストレートフラッシュ'
+              @rank[ind] = 9
             elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 4
               @hand[ind] = 'フォー・オブ・ア・カインド'
+              @rank[ind] = 8
             elsif @nums.uniq.count == 2
               @hand[ind] = 'フルハウス'
+              @rank[ind] = 7
             elsif @suits.uniq.length == 1
               @hand[ind] = 'フラッシュ'
+              @rank[ind] = 6
             elsif @nums.uniq.length == 5 && @nums.max-@nums.min == 4
               @hand[ind] = 'ストレート'
+              @rank[ind] = 5
             elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 3
               @hand[ind] = 'スリー・オブ・ア・カインド'
+              @rank[ind] = 4
             elsif @nums.uniq.length == 3
               @hand[ind] = 'ツーペア'
+              @rank[ind] = 3
             elsif @nums.uniq.length == 4
               @hand[ind] = 'ワンペア'
+              @rank[ind] = 2
             else
               @hand[ind] = 'ハイカード'
+              @rank[ind] = 1
             end
           end
 
           cards_params[:cards].each_with_index do |card,ind|
             @result[ind][:hand] = @hand[ind]
-            @result[ind][:best] = false
+            if @rank[ind] == @rank.max
+              @result[ind][:best] = true
+            else
+              @result[ind][:best] = false
+            end
           end
 
 
