@@ -13,18 +13,34 @@ module API
 
       resource :cards do
         # GET /api/ver1/cards
-        desc 'Return all cards.'
-        get '/', jbuilder: 'ver1/index' do  #index.jbulderをviewとして使う
-          @cards = Card.all
-        end
+        # desc 'Return all cards.'
+        # get '/', jbuilder: 'ver1/index' do  #index.jbulderをviewとして使う
+        #   @cards = Card.all
+        # end
 
         post '/check', jbuilder: 'ver1/index' do
 
           @result = []
           @hand = []
           @rank = []
+          @errors = []
           cards_params[:cards].each_with_index do |card,ind|
-            @result[ind] = { card: card }
+            # modelバリデーションを呼び出したい
+            @card = Card.new(all_card: card)
+            @card[:all_card].split(" ").each_with_index do |c,ind|
+              @card[:first_card]  = c if ind == 0
+              @card[:second_card] = c if ind == 1
+              @card[:third_card]  = c if ind == 2
+              @card[:fourth_card] = c if ind == 3
+              @card[:fifth_card]  = c if ind == 4
+            end
+            @card.save
+            if @card.save
+              @result[ind] = { card: card }
+            else
+              @errors[ind] = { card: card }
+              @errors[ind][:msg] = @card.errors.full_messages #エラーメッセージの取得方法?
+            end
           end
 
           # ここに，handを判定するロジックと,bestを判定するロジックを書く
@@ -69,11 +85,16 @@ module API
           end
 
           cards_params[:cards].each_with_index do |card,ind|
-            @result[ind][:hand] = @hand[ind]
-            if @rank[ind] == @rank.max
-              @result[ind][:best] = true
-            else
-              @result[ind][:best] = false
+            # いい方法が見つからないが，とりあえずエラー回避しつつ:handを代入
+            if @result[ind] && @result[ind].has_key?(:card)
+
+              @result[ind][:hand] = @hand[ind]
+
+              if @rank[ind] == @rank.max
+                @result[ind][:best] = true
+              else
+                @result[ind][:best] = false
+              end
             end
           end
 

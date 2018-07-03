@@ -1,7 +1,11 @@
+json.ignore_nil!
 json.set! :result do
   json.array! @result, :card, :hand, :best
 end
-
+json.set! :error do
+  json.ignore_nil!
+  json.array! @errors#, :card, :msg
+end
 
 
         # # 以下，消して良い
