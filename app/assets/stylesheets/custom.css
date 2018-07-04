@@ -68,3 +68,7 @@ ul {
     color: #2c2c2f;
     background: #cde4ff;/*背景色*/
 }
+/*labelは非表示にする*/
+label {
+    display: none;
+}

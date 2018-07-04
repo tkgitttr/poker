@@ -43,7 +43,6 @@ class CardsController < ApplicationController
     @nums = card_params[:all_card].split(" ").map{ |c| c[1..-1].to_i }
 
     # カードの役を判定する
-    # ストレートフラッシュの判定，13，１，２，，，のような飛びに対応していないので修正
     if (@suits.uniq.length == 1 && @nums.uniq.length == 5) &&
         (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
       @result = 'ストレートフラッシュ'

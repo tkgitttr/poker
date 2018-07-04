@@ -9,7 +9,6 @@
   <%= form_for(@card, url: cards_path, action: "cards#create", html: {method: "post"}) do |f| %>
     <%#= render 'shared/error_messages' %>
     <%= stylesheet_link_tag "custom", :media => "all" %>
-    <%# f.labelつけるとAll_cardと表示されるから，つけずにRspecで指定できる方法を探す %>>
     <%= f.label :all_card %>
     <p><%= f.text_field :all_card, value: @card[:all_card],class: "form-control input-hg", placeholder: "S10 H11 D12 C13 H1" %></p>
     <p><button class="btn btn-hg btn-primary">

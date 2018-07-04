@@ -12,20 +12,16 @@ module API
       end
 
       resource :cards do
-        # GET /api/ver1/cards
-        # desc 'Return all cards.'
-        # get '/', jbuilder: 'ver1/index' do  #index.jbulderをviewとして使う
-        #   @cards = Card.all
-        # end
 
         post '/check', jbuilder: 'ver1/index' do
 
           @result = []
-          @hand = []
-          @rank = []
+          @hand   = []
+          @rank   = []
           @errors = []
           cards_params[:cards].each_with_index do |card,ind|
-            # modelバリデーションを呼び出したい
+            # modelバリデーションを呼び出す
+            card_set#(card) #undefinedになってしまう
             @card = Card.new(all_card: card)
             @card[:all_card].split(" ").each_with_index do |c,ind|
               @card[:first_card]  = c if ind == 0
@@ -52,7 +48,6 @@ module API
             @nums = card.split(" ").map{ |c| c[1..-1].to_i }
 
             # カードの役を判定する
-            # ストレートフラッシュの判定，13，１，２，，，のような飛びに対応していないので修正
             if (@suits.uniq.length == 1 && @nums.uniq.length == 5) &&
                 (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
               @hand[ind] = 'ストレートフラッシュ'
@@ -99,7 +94,6 @@ module API
             end
           end
 
-
           # @card = {}
           # @hand = {}
           # @best = {}
@@ -115,6 +109,12 @@ module API
           # @cards.save #不要.
         end
       end
+
+      # GET /api/ver1/cards
+      # desc 'Return all cards.'
+      # get '/', jbuilder: 'ver1/index' do  #index.jbulderをviewとして使う
+      #   @cards = Card.all
+      # end
 
       # /api/ver1/cards/
       # sessionとかではなく，どうやって@cardに代入する？
@@ -136,6 +136,18 @@ module API
       #   puts "cards success!"
       # end
 
+      # private
+      #   # なぜか使えない
+      #   def card_set
+      #     @card = Card.new(all_card: card)
+      #     @card[:all_card].split(" ").each_with_index do |c,ind|
+      #       @card[:first_card]  = c if ind == 0
+      #       @card[:second_card] = c if ind == 1
+      #       @card[:third_card]  = c if ind == 2
+      #       @card[:fourth_card] = c if ind == 3
+      #       @card[:fifth_card]  = c if ind == 4
+      #     end
+      #   end
     end
   end
 end
