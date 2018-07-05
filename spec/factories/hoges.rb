@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :hoge do
     name "MyString"
     string "MyString"

@@ -21,7 +21,7 @@ module API
           @errors = []
           cards_params[:cards].each_with_index do |card,ind|
             # modelバリデーションを呼び出す
-            card_set#(card) #undefinedになってしまう
+            # card_set#(card) #undefinedになってしまう
             @card = Card.new(all_card: card)
             @card[:all_card].split(" ").each_with_index do |c,ind|
               @card[:first_card]  = c if ind == 0
@@ -83,9 +83,7 @@ module API
           cards_params[:cards].each_with_index do |card,ind|
             # いい方法が見つからないが，とりあえずエラー回避しつつ:handを代入
             if @result[ind] && @result[ind].has_key?(:card)
-
               @result[ind][:hand] = @hand[ind]
-
               if @rank[ind] == @rank.max
                 @result[ind][:best] = true
               else
@@ -93,6 +91,12 @@ module API
               end
             end
           end
+          @result.compact! #出力の都合上, nilを消す必要あり
+
+          # debug
+          # if @result[0][:card].nil?
+          #   @result = [{ card: "H1 S2 S4 S5 S2", hand: "ハイカード", best: false },{ card: "H1 S2 S4 S5 S2", hand: "ハイカード", best: false } ] #試しに代入
+          # end
 
           # @card = {}
           # @hand = {}
