@@ -5,15 +5,7 @@ module API
       version 'v1', using: :path #/v1がパスにつく #using: :pathを入れるとどうなる？
       format :json
 
-      # 接続テスト
-      # get do #'/' do
-      #   puts "v1/root success!"
-      # end
-
       mount API::Ver1::Cards
-
-      # hoge
-      # mount API::Ver1::Hoge
 
       # 404NotFoundの扱い
       route :any, '*path' do

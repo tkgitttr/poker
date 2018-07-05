@@ -92,53 +92,8 @@ module API
             end
           end
           @result.compact! #出力の都合上, nilを消す必要あり
-
-          # debug
-          # if @result[0][:card].nil?
-          #   @result = [{ card: "H1 S2 S4 S5 S2", hand: "ハイカード", best: false },{ card: "H1 S2 S4 S5 S2", hand: "ハイカード", best: false } ] #試しに代入
-          # end
-
-          # @card = {}
-          # @hand = {}
-          # @best = {}
-
-          # @cards = cards_params[:cards]
-          # @cards = { "cards": [ "H1 H13 H12 H11 H10", "H9 C9 S9 H2 C2", "C13 D12 C11 H8 H7" ,"post"] }
-          # cards_params[:cards].map do |cards|
-          #   @card = Card.new(all_card: cards)
-          # end
-          # @cards = [ Card.first, Card.second]
-          # first_card = cards_params[:first_card]
-          # @cards[0].first_card = first_card #paramから受けとったものを反映
-          # @cards.save #不要.
         end
       end
-
-      # GET /api/ver1/cards
-      # desc 'Return all cards.'
-      # get '/', jbuilder: 'ver1/index' do  #index.jbulderをviewとして使う
-      #   @cards = Card.all
-      # end
-
-      # /api/ver1/cards/
-      # sessionとかではなく，どうやって@cardに代入する？
-      # get '/cards' do
-      # @cards = { "cards": [ "H1 H13 H12 H11 H10", "H9 C9 S9 H2 C2", "C13 D12 C11 H8 H1" ] }
-      # @cards.save
-      # end
-
-      # データベースに保存できるかの確認
-      # has_many :hoge
-      # get '/cards' do
-      #   @hoge = Hoge.new#(name: "foo", text: "bar")
-      #   # @hoge.save
-      #   puts @hoge #これはできない.JSON形式だから？
-      # end
-
-      # 接続テスト #表示されない
-      # get '/cards' do
-      #   puts "cards success!"
-      # end
 
       # private
       #   # なぜか使えない
