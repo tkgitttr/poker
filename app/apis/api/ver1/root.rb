@@ -9,7 +9,7 @@ module API
 
       # 404NotFoundの扱い
       route :any, '*path' do
-        error! I18n.t('grape.errors.not_found'), 404
+        error! I18n.t('不正なURLです.'), 404
       end
 
     end
