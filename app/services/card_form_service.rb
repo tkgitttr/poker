@@ -27,7 +27,6 @@ class CardFormService < ApplicationRecord
         card[:fourth_card] = c if ind == 3
         card[:fifth_card]  = c if ind == 4
       end
-      card
     end
 
     # def separate_suit_num(card_params)
@@ -39,25 +38,35 @@ class CardFormService < ApplicationRecord
     def judge_hand(suits, nums)
       if (suits.uniq.length == 1 && nums.uniq.length == 5) &&
           (nums.max - nums.min == 4 || (nums.min == 1 && nums.sum == 47))
-        result = 'ストレートフラッシュ'
+        hand = 'ストレートフラッシュ'
+        rank = 9
       elsif nums.count(nums.max_by { |v| nums.count(v) }) == 4
-        result = 'フォー・オブ・ア・カインド'
+        hand = 'フォー・オブ・ア・カインド'
+        rank = 8
       elsif nums.uniq.count == 2
-        result = 'フルハウス'
+        hand = 'フルハウス'
+        rank = 7
       elsif suits.uniq.length == 1
-        result = 'フラッシュ'
+        hand = 'フラッシュ'
+        rank = 6
       elsif nums.uniq.length == 5 &&
           (nums.max - nums.min == 4 || (nums.min == 1 && nums.sum == 47))
-        result = 'ストレート'
+        hand = 'ストレート'
+        rank = 5
       elsif nums.count(nums.max_by { |v| nums.count(v) }) == 3
-        result = 'スリー・オブ・ア・カインド'
+        hand = 'スリー・オブ・ア・カインド'
+        rank = 4
       elsif nums.uniq.length == 3
-        result = 'ツーペア'
+        hand = 'ツーペア'
+        rank = 3
       elsif nums.uniq.length == 4
-        result = 'ワンペア'
+        hand = 'ワンペア'
+        rank = 2
       else
-        result = 'ハイカード'
+        hand = 'ハイカード'
+        rank = 1
       end
+      [hand,rank]
     end
 
     def save_session(session, card, result)
