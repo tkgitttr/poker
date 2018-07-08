@@ -1,124 +1,38 @@
 class CardsController < ApplicationController
 
-  # Serviceメソッドが使えるかテスト
-    # self.hoge("foobar")
-    # @card = CardFormService.new
-    # render "service/card_form_service.rb" #これはView用のメソッド
-    # CardFormService::hoge
-    def hoge(bar)
-      bar
-    end
-    def self.hogehoge
-      "hogehoge"
-    end
-    # CardFormService.hoge("foo") #なぜだめ？ヒントでfooでてるし認識されているはず
-    Card.cardhoge #モデルクラスのメソッドは呼び出せる．
-    # └やはりServiceディレクトリの読み込みができていない模様．
-    # CardFormService.servicehoge #やはりそう.
-    # Cards.servicehoge #クラス名を変えてみる ＝＞だめ
-    # Card.servicehoge #クラス名を変えてみる => だめ
-    # Hoge.hoges #モデルの中にあってもだめ => ディレクトリではなく，routesの問題？
-    # hoges
-    # redirect_to cards_hoges_path #indexアクションの中に入れれば効果ありそう
-    # CardsController.hoge #新しいメソッドは定義しないと使えない．routesに入れる?
-    # foo("foofoo") #そのまま呼び出しは当然だめ
-
-
+  # Serviceクラス使えるかテスト 消す---------------------------
+  CardFormService.hoge("foofoo") #クラスメソッドはできた！
+  # CardFormService.valid #privateでも呼び出し可能と見えたが，特異クラスのなかではだめ．
+  #-------------------------------------------------------------
 
   def index
-    # Serviceクラス使えるかテスト
-      self.hoge("barbar") #自分のクラスから．これは呼び出せる
-      # ↓自分のクラスから．これはだめ．hogeはインスタンスメソッドだから
-      # CardsController.hoge("barbar")
-      # CardFormService.hoge("foo") #だめ？ヒントでfooでてるし認識されているはず
-      # self.hogehoge #これはインスタンスからクラスメソッド呼び出すのでだめ．
-      CardsController.hogehoge #これはクラスメソッド呼び出しなのでよい
-      # →じゃあ，ルーティング設定しなくてもアクションは追加できるはず．
-      # CardFormService.servicehoge #これはだめ．外のクラスと連携してない？
-      # redirect_to cards_hoges_path #ルーティングしてるから使える #showアクションが必要
-      # redirect_to cardformservice_path
-      # redirect_to card_form_service_path
-      Hoge.hogehoge #ファイル名とクラス名を一致させていないと，読み込みできない!!!
-      CardFormService.hoge("foofoo") #クラスメソッドはできた！
-      # foo("foofoofoo")#そのまま呼び出しは当然だめ
-      # @c_f_s = CardFormService.new("S1 S2 S3 S4 S5") #違うクラスでnewできない？
-      # @c_f_s = Card.new(all_card: "S1 S2 S3 S4 S5")
-      # @c_f_s.foo("foofoofoofoo") #違うクラスだと，当然インスタンスメソッドも使えない.継承してない
-
-    # #########################################
-
-      # 変数受け取り，設定
-    @card = Card.new
-    # session.clear #debag
+    # session.clear #debug
     if session[:all_card].nil?
-      @card[:all_card] = ""
-      @result = ""
+      @card = Card.new(all_card: "")
     else
-      @card[:all_card]    = session[:all_card]
-      @card[:first_card]  = session[:first_card] #first_cardなどもセッションに保存したい
-      @card[:second_card] = session[:second_card]
-      @card[:third_card]  = session[:third_card]
-      @card[:fourth_card] = session[:fourth_card]
-      @card[:fifth_card]  = session[:fifth_card]
+      @card = CardFormService.set_card_from_session(session)
       @card.save #createでsaveしてもerrorが引っかからないので，こっち
-      if @card.save
-        @result = session[:result]
-      else
-        @result = ""
-      end
+      @result = session[:result] if @card.save
     end
   end
 
   def create
     @card = Card.new
-    if card_params
-      @card[:all_card] = card_params[:all_card]
-    end
+    @card[:all_card] = card_params[:all_card] if card_params
 
     # カードを1～5枚目に分解する
-    @card[:all_card].split(" ").each_with_index do |c,ind|
-      @card[:first_card]  = c if ind == 0
-      @card[:second_card] = c if ind == 1
-      @card[:third_card]  = c if ind == 2
-      @card[:fourth_card] = c if ind == 3
-      @card[:fifth_card]  = c if ind == 4
-    end
+    CardFormService.get_five_cards(@card)
 
-    # カードをスートと数字に分解する
+    # カードをスートと数字に分解する #メソッド化いらない？
     @suits = card_params[:all_card].split(" ").map{ |c| c[0] }
     @nums = card_params[:all_card].split(" ").map{ |c| c[1..-1].to_i }
+    # [@suits, @nums] = CardFormService.separate_suit_num(card_params)
 
     # カードの役を判定する
-    if (@suits.uniq.length == 1 && @nums.uniq.length == 5) &&
-        (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
-      @result = 'ストレートフラッシュ'
-    elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 4
-      @result = 'フォー・オブ・ア・カインド'
-    elsif @nums.uniq.count == 2
-      @result = 'フルハウス'
-    elsif @suits.uniq.length == 1
-      @result = 'フラッシュ'
-    elsif @nums.uniq.length == 5 &&
-        (@nums.max - @nums.min == 4 || (@nums.min == 1 && @nums.sum == 47))
-      @result = 'ストレート'
-    elsif @nums.count(@nums.max_by { |v| @nums.count(v) }) == 3
-      @result = 'スリー・オブ・ア・カインド'
-    elsif @nums.uniq.length == 3
-      @result = 'ツーペア'
-    elsif @nums.uniq.length == 4
-      @result = 'ワンペア'
-    else
-      @result = 'ハイカード'
-    end
+    @result = CardFormService.judge_hand(@suits, @nums)
 
     # sessionに保存
-    session[:all_card]    = @card[:all_card]
-    session[:first_card]  = @card[:first_card]
-    session[:second_card] = @card[:second_card]
-    session[:third_card]  = @card[:third_card]
-    session[:fourth_card] = @card[:fourth_card]
-    session[:fifth_card]  = @card[:fifth_card]
-    session[:result] = @result
+    CardFormService.save_session(session, @card, @result)
 
     # indexにリダイレクト
     redirect_to root_path
