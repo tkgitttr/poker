@@ -2,6 +2,15 @@ class Card < ApplicationRecord
 
   VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
   validate :card_format
+  # Service層がつながるかのテスト
+    # CardFormService.hoge("foobar")
+    # ApplicationRecord.CardFormService.hoge("foobar")
+    # class CardFormService < ApplicationRecord
+    #     hoge("foobar")
+    # end
+    # hoge("foobar")
+    def Card.cardhoge
+    end
 
   def card_format
     if all_card.split(" ").length == 5

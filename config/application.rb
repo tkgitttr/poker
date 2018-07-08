@@ -16,6 +16,11 @@ module Poker
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # Serviceディレクトリをオートロードする #app/以下は自動でpathに入るから不要
+    # config.autoload_paths += %W(#{config.root}/app/services)
+    # config.paths.add File.join('app', 'services'), glob: File.join('*.rb')
+    # config.autoload_paths += Dir[Rails.root.join('app', 'services')]
+
     # errorメッセージで型くずれを防ぐ...失敗
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
       %Q(#{html_tag}).html_safe
@@ -24,9 +29,9 @@ module Poker
     # Flat-UI
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
 
-    # APIの読み込み
-    config.paths.add File.join('app', 'apis'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'apis', '*')]
+    # APIの読み込み #/app以下は自動でパスに追加されるから不要
+    # config.paths.add File.join('app', 'apis'), glob: File.join('**', '*.rb')
+    # config.autoload_paths += Dir[Rails.root.join('app', 'apis', '*')]
 
     # Grape+JBuilderを使うための設定
     config.middleware.use(Rack::Config) do |env|
