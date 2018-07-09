@@ -25,11 +25,11 @@ class CardFormService < ApplicationRecord
       end
     end
 
-    # def separate_suit_num(card_params)
-    #   suits = card_params[:all_card].split(" ").map{ |c| c[0] }
-    #   nums = card_params[:all_card].split(" ").map{ |c| c[1..-1].to_i }
-    #   [suits,nums]
-    # end
+    def separate_suit_num(all_card)
+      suits = all_card.split(" ").map{ |c| c[0] }
+      nums = all_card.split(" ").map{ |c| c[1..-1].to_i }
+      [suits,nums]
+    end
 
     def judge_hand(suits, nums)
       if (suits.uniq.length == 1 && nums.uniq.length == 5) &&
@@ -101,9 +101,7 @@ class CardFormService < ApplicationRecord
     end
 
     def card_unique_valid?(all_card,errors)
-      if all_card.split(" ").uniq.length < 5
-        errors.add(" ", "カードが重複しています。")
-      end
+        errors.add(" ", "カードが重複しています。") if all_card.split(" ").uniq.length < 5
     end
 
   end

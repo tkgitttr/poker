@@ -16,14 +16,14 @@ module API
         post '/check', jbuilder: 'ver1/index' do
 
           @result = []
-          @hand   = []
           @rank   = []
           @errors = []
+
+          #カードを，@resultと@errorsに振り分ける
           cards_params[:cards].each_with_index do |card,ind|
             # modelバリデーションを呼び出す
             @card = Card.new(all_card: card)
             CardFormService.get_five_cards(@card)
-            @card.save
             if @card.save
               @result[ind] = { card: card }
             else
@@ -33,24 +33,19 @@ module API
             @errors.compact! #nilを消す
           end
 
+          # @resultのカードは，役を判定する
           cards_params[:cards].each_with_index do |card,ind|
-            # カードをスートと数字に分解する
-            @suits = card.split(" ").map{ |c| c[0] }
-            @nums = card.split(" ").map{ |c| c[1..-1].to_i }
-
-            @hand[ind], @rank[ind] = CardFormService.judge_hand(@suits, @nums)
-          end
-
-          cards_params[:cards].each_with_index do |card,ind|
-            # いい方法が見つからないが，とりあえずエラー回避しつつ:handを代入
+            @rank[ind] = 0 #nil回避
             if @result[ind] && @result[ind].has_key?(:card)
-              @result[ind][:hand] = @hand[ind]
-              if @rank[ind] == @rank.max
-                @result[ind][:best] = true
-              else
-                @result[ind][:best] = false
-              end
+              @suits, @nums = CardFormService.separate_suit_num(card)
+              @result[ind][:hand], @rank[ind] = CardFormService.judge_hand(@suits, @nums)
+              @result[ind][:best] = false
             end
+          end
+          #bestかどうかを判定する
+          indexes = @rank.each_with_index.map{ |v,i| v == @rank.max ? i : nil }.compact
+          indexes.each do |i|
+            @result[i][:best] = true #これだと複数trueができない
           end
           @result.compact! #出力の都合上, nilを消す必要あり
         end

@@ -14,12 +14,7 @@ class CardsController < ApplicationController
     @card = Card.new
     @card[:all_card] = card_params[:all_card] if card_params
     CardFormService.get_five_cards(@card)
-
-    # カードをスートと数字に分解する #メソッド化いらない？
-    @suits = card_params[:all_card].split(" ").map{ |c| c[0] }
-    @nums = card_params[:all_card].split(" ").map{ |c| c[1..-1].to_i }
-    # [@suits, @nums] = CardFormService.separate_suit_num(card_params)
-
+    @suits, @nums = CardFormService.separate_suit_num(card_params[:all_card])
     @result,  = CardFormService.judge_hand(@suits, @nums) #rankは不要
     CardFormService.save_session(session, @card, @result)
 
