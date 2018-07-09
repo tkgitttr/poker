@@ -1,6 +1,7 @@
-json.ignore_nil!
-json.set! :result do
-  json.array! @result, :card, :hand, :best
+unless @result.empty?
+  json.set! :result do
+    json.array! @result, :card, :hand, :best
+  end
 end
 
 unless @errors.empty?
