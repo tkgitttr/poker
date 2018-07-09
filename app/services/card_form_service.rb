@@ -79,15 +79,16 @@ class CardFormService < ApplicationRecord
       session[:result] = result
     end
 
-    def valid
+    def valid(all_card,first_card,second_card,third_card,fourth_card,fifth_card,valid_card_regex,errors)
+      #errorを引数で渡す必要があるのか
       if all_card.split(" ").length == 5
-        errors.add(" ", "1番目のカード指定文字が不正です。 (#{first_card})")  if first_card  !~ VALID_CARD_REGEX
-        errors.add(" ", "2番目のカード指定文字が不正です。 (#{second_card})") if second_card !~ VALID_CARD_REGEX
-        errors.add(" ", "3番目のカード指定文字が不正です。 (#{third_card})")  if third_card  !~ VALID_CARD_REGEX
-        errors.add(" ", "4番目のカード指定文字が不正です。 (#{fourth_card})") if fourth_card !~ VALID_CARD_REGEX
-        errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ VALID_CARD_REGEX
-        if first_card !~ VALID_CARD_REGEX || second_card !~ VALID_CARD_REGEX || third_card !~ VALID_CARD_REGEX ||
-            fourth_card !~ VALID_CARD_REGEX || fifth_card !~ VALID_CARD_REGEX
+        errors.add(" ", "1番目のカード指定文字が不正です。 (#{first_card})")  if first_card  !~ valid_card_regex
+        errors.add(" ", "2番目のカード指定文字が不正です。 (#{second_card})") if second_card !~ valid_card_regex
+        errors.add(" ", "3番目のカード指定文字が不正です。 (#{third_card})")  if third_card  !~ valid_card_regex
+        errors.add(" ", "4番目のカード指定文字が不正です。 (#{fourth_card})") if fourth_card !~ valid_card_regex
+        errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ valid_card_regex
+        if first_card !~ valid_card_regex || second_card !~ valid_card_regex || third_card !~ valid_card_regex ||
+            fourth_card !~ valid_card_regex || fifth_card !~ valid_card_regex
           errors.add(" ", "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。")
         end
         if all_card.split(" ").uniq.length < 5
