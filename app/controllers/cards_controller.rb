@@ -1,17 +1,11 @@
 class CardsController < ApplicationController
 
-  # Serviceクラス使えるかテスト 消す---------------------------
-  CardFormService.hoge("foofoo") #クラスメソッドはできた！
-  # CardFormService.valid #privateでも呼び出し可能と見えたが，特異クラスのなかではだめ．
-  #-------------------------------------------------------------
-
   def index
     # session.clear #debug
     if session[:all_card].nil?
       @card = Card.new(all_card: "")
     else
       @card = CardFormService.set_card_from_session(session)
-      @card.save #createでsaveしてもerrorが引っかからないので，こっち
       @result = session[:result] if @card.save
     end
   end
@@ -29,7 +23,6 @@ class CardsController < ApplicationController
     @result,  = CardFormService.judge_hand(@suits, @nums) #rankは不要
     CardFormService.save_session(session, @card, @result)
 
-    # indexにリダイレクト
     redirect_to root_path
   end
 
@@ -37,5 +30,4 @@ class CardsController < ApplicationController
     def card_params
       params.require(:card).permit(:all_card)
     end
-
 end

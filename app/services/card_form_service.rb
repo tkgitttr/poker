@@ -1,10 +1,6 @@
 class CardFormService < ApplicationRecord
   class << self #クラスメソッドを定義していく
 
-    def hoge(foo) #これはテスト用．後で消す．
-      foo
-    end
-
   # private #privateにしてわかりやすくするのは一旦あきらめる
     attr_reader :all_card
 
