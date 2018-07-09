@@ -79,23 +79,34 @@ class CardFormService < ApplicationRecord
       session[:result] = result
     end
 
+    # validate :valid #バリデーションをこっちに移行すべき？
     def valid(all_card,first_card,second_card,third_card,fourth_card,fifth_card,valid_card_regex,errors)
       #errorを引数で渡す必要があるのか
-      if all_card.split(" ").length == 5
+      if card_num_valid?(all_card,errors)
         errors.add(" ", "1番目のカード指定文字が不正です。 (#{first_card})")  if first_card  !~ valid_card_regex
         errors.add(" ", "2番目のカード指定文字が不正です。 (#{second_card})") if second_card !~ valid_card_regex
         errors.add(" ", "3番目のカード指定文字が不正です。 (#{third_card})")  if third_card  !~ valid_card_regex
         errors.add(" ", "4番目のカード指定文字が不正です。 (#{fourth_card})") if fourth_card !~ valid_card_regex
         errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ valid_card_regex
-        if first_card !~ valid_card_regex || second_card !~ valid_card_regex || third_card !~ valid_card_regex ||
-            fourth_card !~ valid_card_regex || fifth_card !~ valid_card_regex
+        if errors.any?
           errors.add(" ", "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。")
         end
-        if all_card.split(" ").uniq.length < 5
-          errors.add(" ", "カードが重複しています。")
-        end
-      else
+        card_unique_valid?(all_card,errors)
+      end
+    end
+
+    def card_num_valid?(all_card,errors)
+      if all_card.split(" ").length != 5
         errors.add(" ",'5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）')
+        false
+      else
+        true
+      end
+    end
+
+    def card_unique_valid?(all_card,errors)
+      if all_card.split(" ").uniq.length < 5
+        errors.add(" ", "カードが重複しています。")
       end
     end
 
