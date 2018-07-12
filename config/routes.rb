@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   # mount API::Root => '/api'
   mount API::Root => '/' #prefixつけた場合は"/"のみの記述
 
+  # すべてのURLエラーをハンドリングするために，検出する
+  # match "*path" => "application#handle_404", via: :all
 end
 

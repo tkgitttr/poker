@@ -6,12 +6,6 @@ module API
       format :json
 
       mount API::Ver1::Cards
-
-      # 404NotFoundの扱い
-      route :any, '*path' do
-        error! I18n.t('不正なURLです.'), 404
-      end
-
     end
   end
 end
