@@ -1,5 +1,5 @@
 class CardFormService < ApplicationRecord
-  class << self #クラスメソッドを定義していく
+  class << self #クラスメソッドを定義していく #or 各ファイルにサービスオブジェクトを作る？
 
   # private #privateにしてわかりやすくするのは一旦あきらめる
     attr_reader :all_card
@@ -75,7 +75,8 @@ class CardFormService < ApplicationRecord
       session[:result] = result
     end
 
-    # validate :valid #バリデーションをこっちに移行すべき？
+    # validate :valid #バリデーションをこっちに移行すべき？ クラスメソッドでは不可?
+    # DDDはServiceにTable置く？
     def valid(all_card,first_card,second_card,third_card,fourth_card,fifth_card,valid_card_regex,errors)
       #errorを引数で渡す必要があるのか
       if card_num_valid?(all_card,errors)
@@ -102,6 +103,25 @@ class CardFormService < ApplicationRecord
 
     def card_unique_valid?(all_card,errors)
         errors.add(" ", "カードが重複しています。") if all_card.split(" ").uniq.length < 5
+    end
+
+    def distribute_result_errors(cards_params)
+      result =[]
+      errors =[]
+      cards_params[:cards].each_with_index do |c,ind|
+        # modelバリデーションを呼び出す
+        card = Card.new(all_card: c)
+        CardFormService.get_five_cards(card)
+        if card.save
+          result[ind] = { card: c }
+        else
+          errors[ind] = { card: c }
+          errors[ind][:msg] = card.errors.full_messages
+        end
+        result.compact!
+        errors.compact! #nilを消す
+      end
+      [result,errors]
     end
 
   end

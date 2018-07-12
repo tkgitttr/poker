@@ -20,4 +20,4 @@
 //bbb= require bootstrap-sprockets
 
 // Flat-UIを導入する
-//= require flat-ui
+//bbb= require flat-ui
