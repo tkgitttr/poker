@@ -1,4 +1,5 @@
 class CardFormService < ApplicationRecord
+
   class << self #クラスメソッドを定義していく #or 各ファイルにサービスオブジェクトを作る？
 
   # private #privateにしてわかりやすくするのは一旦あきらめる
