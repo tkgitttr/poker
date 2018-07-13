@@ -13,11 +13,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.new
     @card[:all_card] = card_params[:all_card] if card_params
-    CardFormService.get_five_cards(@card)
-    @suits, @nums = CardFormService.separate_suit_num(card_params[:all_card])
-    @result,  = CardFormService.judge_hand(@suits, @nums) #rankは不要
-    CardFormService.save_session(session, @card, @result)
-
+    CardFormService.get_result(@card,session)
     redirect_to root_path
   end
 

@@ -4,6 +4,13 @@ class CardFormService < ApplicationRecord
   # private #privateにしてわかりやすくするのは一旦あきらめる
     attr_reader :all_card
 
+    def get_result(card,session)
+      get_five_cards(card)
+      suits, nums = separate_suit_num(card[:all_card])
+      result,  = judge_hand(suits, nums) #rankは不要
+      save_session(session, card, result)
+    end
+
     def set_card_from_session(session)
       card = Card.new
       card[:all_card]    = session[:all_card]
@@ -77,14 +84,15 @@ class CardFormService < ApplicationRecord
 
     # validate :valid #バリデーションをこっちに移行すべき？ クラスメソッドでは不可?
     # DDDはServiceにTable置く？
-    def valid(all_card,first_card,second_card,third_card,fourth_card,fifth_card,valid_card_regex,errors)
+    VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
+    def valid(all_card,first_card,second_card,third_card,fourth_card,fifth_card,errors)
       #errorを引数で渡す必要があるのか
       if card_num_valid?(all_card,errors)
-        errors.add(" ", "1番目のカード指定文字が不正です。 (#{first_card})")  if first_card  !~ valid_card_regex
-        errors.add(" ", "2番目のカード指定文字が不正です。 (#{second_card})") if second_card !~ valid_card_regex
-        errors.add(" ", "3番目のカード指定文字が不正です。 (#{third_card})")  if third_card  !~ valid_card_regex
-        errors.add(" ", "4番目のカード指定文字が不正です。 (#{fourth_card})") if fourth_card !~ valid_card_regex
-        errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ valid_card_regex
+        errors.add(" ", "1番目のカード指定文字が不正です。 (#{first_card})")  if first_card  !~ VALID_CARD_REGEX
+        errors.add(" ", "2番目のカード指定文字が不正です。 (#{second_card})") if second_card !~ VALID_CARD_REGEX
+        errors.add(" ", "3番目のカード指定文字が不正です。 (#{third_card})")  if third_card  !~ VALID_CARD_REGEX
+        errors.add(" ", "4番目のカード指定文字が不正です。 (#{fourth_card})") if fourth_card !~ VALID_CARD_REGEX
+        errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ VALID_CARD_REGEX
         if errors.any?
           errors.add(" ", "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。")
         end

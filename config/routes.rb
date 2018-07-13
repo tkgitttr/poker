@@ -6,6 +6,5 @@ Rails.application.routes.draw do
 
   # grape APIのルーティング
   mount API::Root => '/' #prefixつけた場合は"/"のみの記述
-
 end
 
