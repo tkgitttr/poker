@@ -10,24 +10,12 @@ RSpec.describe CardFormService, type: :service do
     {all_card: "S1 S2 S3 S4 S5", first_card: "S1", second_card: "S2",
      third_card: "S3", fourth_card: "S4", fifth_card: "S5"}
   end
+  let(:all_card) do
+    {all_card: "S1 S2 S3 S4 S5"}
+  end
 
   describe "get_result" do
-    before do
-      # 下記のように書いてもうまくいかない．順を理解していない
-      # allow(CardFormService).to receive(:get_five_cards)
-      # allow(CardFormService).to receive(:separate_suit_num)
-      # CardFormService.get_result({all_card: "H1 H2 H3 H4 H5"},{})
-    end
-
     it "get_five_cardsメソッドを呼ぶ" do
-      # # CardFormServiceのモックを作る
-      # card_form_service_mock = double('CardFormService')
-      # # get_resultメソッドが呼びだせるようにする
-      # allow(card_form_service_mock).to receive(:get_result)
-      # allow(card_form_service_mock).to receive(:get_five_cards)
-      # expect(card_form_service_mock.get_result).to have_recieved(:get_five_cards)
-      # expect(card_form_service_mock).to have_received(:get_five_cards).with({all_card: "H1 H2 H3 H4 H5"}).once
-
       allow(CardFormService).to receive(:get_five_cards)
       CardFormService.get_result({all_card: "H1 H2 H3 H4 H5"},{})
       expect(CardFormService).to have_received(:get_five_cards).once
@@ -38,21 +26,11 @@ RSpec.describe CardFormService, type: :service do
       CardFormService.get_result({all_card: "H1 H2 H3 H4 H5"},{})
       expect(CardFormService).to have_received(:separate_suit_num).once
     end
-
-    # it "suitsがある" do #メソッドのテストと二重になるから不要
-    #   allow(CardFormService).to receive(:separate_suit_num)
-    #   allow(CardFormService).to receive(:judge_hand) #なぜかこれを許可しないとテストが通らない
-    #   CardFormService.get_result({all_card: "H1 H2 H3 H4 H5"},{})
-    #   expect(suits).to eq [1, 2, 3, 4, 5]
-    # end
-    # it "numsがある"
-
     it "judge_handメソッドを呼ぶ" do
       allow(CardFormService).to receive(:judge_hand)
       CardFormService.get_result({all_card: "H1 H2 H3 H4 H5"},{})
       expect(CardFormService).to have_received(:judge_hand).once
     end
-    # it "resultがある" #二重になるので不要
     it "save_sessionを呼ぶ" do
       allow(CardFormService).to receive(:save_session)
       CardFormService.get_result({all_card: "H1 H2 H3 H4 H5"},{})
@@ -62,53 +40,31 @@ RSpec.describe CardFormService, type: :service do
 
   describe "set_card_form_session" do
     before do
-      # @card = Card.new
-      # allow(CardFormService).to receive(:set_card_from_session)
-      # CardFormService.set_card_from_session(:valid_session)
-    end
-    it "cardインスタンスを作る" do
-      #このテストは必要？
-      # expect(assigns(:card)).to be_a_new(Card)
+      @card = CardFormService.set_card_from_session(valid_session)
     end
     it "session[:all_card]をcard[:all_card]に代入する" do
-      pending
-      # 変数に値が入らない
-      # card = Card.newが実行できていない？ ＝＞やはりそのよう => 一旦保留
-      allow(Card).to receive(:new)
-      # allow(Card).to receive(:initialize)
-      # expect(Card).to have_received(:initialize).once
-      card = Card.new
-      # card = CardFormService.set_card_from_session(:valid_session)
-      expect(Card).to have_received(:new).once
-
-      # @card = Card.new
-      # card = {}
-      # @card =[]
-      # allow(CardFormService).to receive(:set_card_from_session)
-
-      # card = CardFormService.set_card_from_session(:valid_session)
-      # expect(CardFormService).to have_received(:set_card_from_session).once
-      # card = CardFormService.set_card_from_session({all_card: "H1 H2 H3 H4 H5"})
-      # CardFormService.set_card_from_session({all_card: "H1 H2 H3 H4 H5"})
-      # expect(CardFormService.set_card_from_session({all_card: "H1 H2 H3 H4 H5"})
-      # ).to eq valid_session[:all_card]
-      # expect(CardFormService.set_card_from_session(:valid_session)
-      # ).to eq valid_session[:all_card]
-      expect(card[:all_card]).to eq valid_session[:all_card]
-      # expect(@card).to eq valid_session[:all_card]
+      expect(@card[:all_card]).to eq "S1 S2 S3 S4 S5"
     end
-    it "session[:first_card]をcard[:first_card]に代入する"
-    it "session[:second_card]をcard[:second_card]に代入する"
-    it "session[:third_card]をcard[:third_card]に代入する"
-    it "session[:fourth_card]をcard[:fourth_card]に代入する"
-    it "session[:fourth_card]をcard[:fourth_card]に代入する"
-    it "session[:fifth_card]をcard[:fifth_card]に代入する"
-    it "cardを返す"
+    it "session[:first_card]をcard[:first_card]に代入する" do
+      expect(@card[:first_card]).to eq "S1"
+    end
+    it "session[:second_card]をcard[:second_card]に代入する" do
+      expect(@card[:second_card]).to eq "S2"
+    end
+    it "session[:third_card]をcard[:third_card]に代入する" do
+      expect(@card[:third_card]).to eq "S3"
+    end
+    it "session[:fourth_card]をcard[:fourth_card]に代入する" do
+      expect(@card[:fourth_card]).to eq "S4"
+    end
+    it "session[:fourth_card]をcard[:fifth_card]に代入する" do
+      expect(@card[:fifth_card]).to eq "S5"
+    end
   end
 
   describe "get_five_cards" do
     before do
-      @card = {all_card: "S1 S2 S3 S4 S5"}
+      @card = all_card
       CardFormService.get_five_cards(@card)
     end
     it "card[:first_card]にcard[:all_card]の1つ目が代入される" do
@@ -129,13 +85,15 @@ RSpec.describe CardFormService, type: :service do
   end
 
   describe "separate_suit_num" do
+    before do
+      @suits, @nums = CardFormService.separate_suit_num(all_card[:all_card])
+    end
     it "suitsにall_cardのスートが配列で格納される" do
-      expect(CardFormService.separate_suit_num("H1 H2 H3 H4 H5")[1]).to eq [1, 2, 3, 4, 5]
+      expect(@suits).to eq ["S", "S", "S", "S", "S"]
     end
     it "numsにall_cardの数字が配列で格納される" do
-      expect(CardFormService.separate_suit_num("H1 H2 H3 H4 H5")[1]).to eq [1, 2, 3, 4, 5]
+      expect(@nums).to eq [1, 2, 3, 4, 5]
     end
-    it "suitsとnumsを返す"
   end
 
   describe "judge_hand" do
@@ -287,10 +245,7 @@ RSpec.describe CardFormService, type: :service do
   describe "save_session" do
     before do
       @session = {}
-      # CardFormService.save_session(@session, {all_card: "S1 S2 S3 S4 S5"}, "ワンペア")
-      # CardFormService.save_session(@session, :valid_attributes, "ワンペア") #let使えない？
-      CardFormService.save_session(@session, {all_card: "S1 S2 S3 S4 S5", first_card: "S1", second_card: "S2",
-                                              third_card: "S3", fourth_card: "S4", fifth_card: "S5"}, "ワンペア")
+      CardFormService.save_session(@session, valid_attributes, "ワンペア")
     end
     it "session[:all_card]にcard[:all_card]が代入される" do
       expect(@session[:all_card]).to eq "S1 S2 S3 S4 S5"
@@ -422,27 +377,20 @@ RSpec.describe CardFormService, type: :service do
   end
 
   describe "distribute_result_errors" do
-    # letだとうまくいかない
-    # let(:good_cards_params) do
-    #   {cards: ["S1 S2 S3 S4 S5", "H1 H2 H3 H4 H6"]}
-    # end
-    before do
-      @cards_params = {cards: ["S1 S2 S3 S4 S5", "H1 H2 H3 H4 H6"]}
+    let(:good_cards_params) do
+    { cards: ["S1 S2 S3 S4 S5", "H1 H2 H3 H4 H6"] }
     end
-    it "result（空配列）を作る"  #いらない
-    it "errors（空配列）を作る"  #いらない
-    it "各カードセットごとに，Cardインスタンスを作成する" #いらない？
     it "get_five_cardsメソッドを呼び出す" do
       allow(CardFormService).to receive(:get_five_cards)
-      CardFormService.distribute_result_errors(@cards_params)
+      CardFormService.distribute_result_errors(good_cards_params)
       expect(CardFormService).to have_received(:get_five_cards).twice
     end
     context "card.saveできたとき" do
       it "Cardモデルに要素が増える" do
-        expect{CardFormService.distribute_result_errors(@cards_params)}.to change(Card, :count).by(2)
+        expect{CardFormService.distribute_result_errors(good_cards_params)}.to change(Card, :count).by(2)
       end
       it "resultに，{card: #[カードセット]}のハッシュを代入" do
-        result,  = CardFormService.distribute_result_errors(@cards_params)
+        result,  = CardFormService.distribute_result_errors(good_cards_params)
         expect(result).to include({ card: "S1 S2 S3 S4 S5" })
         expect(result).to include({ card: "H1 H2 H3 H4 H6" })
       end
@@ -471,7 +419,6 @@ RSpec.describe CardFormService, type: :service do
       result, errors  = CardFormService.distribute_result_errors({cards: ["S1 S2 G4 S4 S5", "", "H1 H2 H3 H4 H5"]})
       expect(errors).not_to include nil
     end
-    it "result,errorsを返す" #いらないはず
   end
 
 end
