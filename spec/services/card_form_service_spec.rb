@@ -61,8 +61,42 @@ RSpec.describe CardFormService, type: :service do
   end
 
   describe "set_card_form_session" do
-    it "cardインスタンスを作る"
-    it "session[:all_card]をcard[:all_card]に代入する"
+    before do
+      # @card = Card.new
+      # allow(CardFormService).to receive(:set_card_from_session)
+      # CardFormService.set_card_from_session(:valid_session)
+    end
+    it "cardインスタンスを作る" do
+      #このテストは必要？
+      # expect(assigns(:card)).to be_a_new(Card)
+    end
+    it "session[:all_card]をcard[:all_card]に代入する" do
+      pending
+      # 変数に値が入らない
+      # card = Card.newが実行できていない？ ＝＞やはりそのよう => 一旦保留
+      allow(Card).to receive(:new)
+      # allow(Card).to receive(:initialize)
+      # expect(Card).to have_received(:initialize).once
+      card = Card.new
+      # card = CardFormService.set_card_from_session(:valid_session)
+      expect(Card).to have_received(:new).once
+
+      # @card = Card.new
+      # card = {}
+      # @card =[]
+      # allow(CardFormService).to receive(:set_card_from_session)
+
+      # card = CardFormService.set_card_from_session(:valid_session)
+      # expect(CardFormService).to have_received(:set_card_from_session).once
+      # card = CardFormService.set_card_from_session({all_card: "H1 H2 H3 H4 H5"})
+      # CardFormService.set_card_from_session({all_card: "H1 H2 H3 H4 H5"})
+      # expect(CardFormService.set_card_from_session({all_card: "H1 H2 H3 H4 H5"})
+      # ).to eq valid_session[:all_card]
+      # expect(CardFormService.set_card_from_session(:valid_session)
+      # ).to eq valid_session[:all_card]
+      expect(card[:all_card]).to eq valid_session[:all_card]
+      # expect(@card).to eq valid_session[:all_card]
+    end
     it "session[:first_card]をcard[:first_card]に代入する"
     it "session[:second_card]をcard[:second_card]に代入する"
     it "session[:third_card]をcard[:third_card]に代入する"
@@ -73,7 +107,17 @@ RSpec.describe CardFormService, type: :service do
   end
 
   describe "get_five_cards" do
-    it "card[:first_card]にcard[:all_card]の1つ目が代入される"
+    it "card[:first_card]にcard[:all_card]の1つ目が代入される" do
+      @card = {all_card: "S1 S2 S3 S4 S5"}
+      # allow(CardFormService).to receive(:get_five_cards)
+      # allow(CardFormService).to receive(:get_five_cards).and_return(@card) #これは強制で値を返すだけ
+      CardFormService.get_five_cards(@card)
+      # expect(CardFormService).to have_received(:get_five_cards).once #debug
+      # expect(CardFormService).to receive(:get_five_cards).and_call_original
+      expect(@card[:first_card]).to eq "S1"
+      # expect(CardFormService.get_five_cards(@card)).to include({first_card: "S1"})
+      # expect(CardFormService.get_five_cards(@card)).to eq({first_card: "S1"})
+    end
     it "card[:second_card]にcard[:all_card]の2つ目が代入される"
     it "card[:third_card]にcard[:all_card]の3つ目が代入される"
     it "card[:fourth_card]にcard[:all_card]の4つ目が代入される"
