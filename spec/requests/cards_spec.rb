@@ -22,15 +22,7 @@ RSpec.describe "API::Ver1::Cards", type: :request do
         post "/api/v1/cards/check", params: good_cards, headers:  request_header #URLはあってる模様．cards.rbには送られているのを確認済み
       end
       it "201(create)が返ってくる" do
-        # post "/api/v1/cards/check", params: good_cards, headers:  request_header #URLはあってる模様．cards.rbには送られているのを確認済み
         expect(response).to have_http_status(201)
-
-        # 最後に消す
-        # post "api/v1/cards/check", @params
-        # post "api/v1/cards/check", good_cards, request_header
-        # post cards_path(format: :json), params: good_cards, headers:  request_header
-        # post "/api/v1/cards", params: good_cards, headers:  request_header #表示のURLとしてならあってる
-        # post api_v1_path, params: good_cards, headers:  request_header #この形のpathが設定されていない？
       end
       it "Cardレコードが増える" do
         expect {
@@ -55,8 +47,6 @@ RSpec.describe "API::Ver1::Cards", type: :request do
         post "/api/v1/cards/check", params: wrong_cards, headers:  request_header
       end
       it "エラーメッセージを含むJSONが返ってくる" do
-        # post "/api/v1/cards/check", params: wrong_cards, headers:  request_header
-        # expect(response).to include("error")
         body = JSON.parse(response.body)
         expect(body["result"][0]["card"]).to eq "H1 H13 H12 H11 H10"
         expect(body["result"][0]["hand"]).to eq "ストレートフラッシュ"
@@ -73,7 +63,5 @@ RSpec.describe "API::Ver1::Cards", type: :request do
         }.to change { Card.count }.by(2) #2セット：正，1セット：誤　
       end
     end
-
   end
-
 end
