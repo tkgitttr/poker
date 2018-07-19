@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2eaa158-df22-4a3b-82f9-045985f03771" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/services/card_form_service_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/services/card_form_service_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -70,17 +69,26 @@
           <file leaf-file-name="memo" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/memo">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cards_controller_spec.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="cards_controller_spec.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="22" selection-start-column="22" selection-end-column="22" />
+                <state relative-caret-position="290">
+                  <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#860#955#0" />
+                    <element signature="e#1013#1119#0" />
+                    <element signature="e#1153#1379#0" />
+                    <element signature="e#1395#1602#0" />
+                    <element signature="e#1350#1660#0" />
+                    <element signature="e#1370#1478#0" />
+                    <element signature="e#1514#1652#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -94,26 +102,38 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="card_form_service_spec.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="card_form_service_spec.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/services/card_form_service_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="701">
-                  <caret line="474" column="6" selection-start-line="474" selection-start-column="6" selection-end-line="474" selection-end-column="6" />
+                <state relative-caret-position="29">
+                  <caret line="378" column="38" selection-start-line="378" selection-start-column="38" selection-end-line="378" selection-end-column="38" />
                   <folding>
-                    <element signature="e#4381#4838#0" />
-                    <element signature="e#4249#4556#0" />
-                    <element signature="e#5408#9348#0" />
-                    <element signature="e#9347#10272#0" />
-                    <element signature="e#10603#10739#0" />
-                    <element signature="e#10627#10644#0" />
-                    <element signature="e#11106#11258#0" />
-                    <element signature="e#12312#12493#0" />
-                    <element signature="e#8042#8094#0" />
-                    <element signature="e#12854#13035#0" />
-                    <element signature="e#13132#13157#0" />
-                    <element signature="e#13885#14216#0" />
-                    <element signature="e#13392#13902#0" />
-                    <element signature="e#14014#14404#0" />
+                    <element signature="e#100#238#0" />
+                    <element signature="e#261#399#0" />
+                    <element signature="e#419#432#0" />
+                    <element signature="e#425#2490#0" />
+                    <element signature="e#707#1363#0" />
+                    <element signature="e#1398#1681#0" />
+                    <element signature="e#2034#2228#0" />
+                    <element signature="e#2286#2484#0" />
+                    <element signature="e#1470#2133#0" />
+                    <element signature="e#2163#2824#0" />
+                    <element signature="e#2857#3164#0" />
+                    <element signature="e#3190#7101#0" />
+                    <element signature="e#7129#8348#0" />
+                    <element signature="e#8369#11141#0" />
+                    <element signature="e#8464#8657#0" />
+                    <element signature="e#8697#10856#0" />
+                    <element signature="e#10897#11135#0" />
+                    <element signature="e#10919#11127#0" />
+                    <element signature="e#11172#11760#0" />
+                    <element signature="e#11794#12261#0" />
+                    <element signature="e#15537#16122#0" />
+                    <element signature="e#15553#15574#0" />
+                    <element signature="e#15589#15610#0" />
+                    <element signature="e#16009#16030#0" />
+                    <element signature="e#16126#16143#0" />
+                    <element signature="e#16528#16545#0" />
                   </folding>
                 </state>
               </provider>
@@ -132,11 +152,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="card_form_service.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="card_form_service.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
+                <state relative-caret-position="51">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -150,11 +170,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cards_controller.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="cards_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" selection-start-line="11" selection-end-line="11" />
+                <state relative-caret-position="238">
+                  <caret line="15" column="30" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -236,7 +256,6 @@
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/spec/rails_helper.rb" />
         <option value="$PROJECT_DIR$/spec/views/cards/index.html.erb_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" />
         <option value="$PROJECT_DIR$/spec/views/cards/new.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/views/cards/edit.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/views/cards/show.html.erb_spec.rb" />
@@ -263,7 +282,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/vendor/assets/stylesheets/flat-ui.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/memo" />
         <option value="$PROJECT_DIR$/app/apis/api/root.rb" />
         <option value="$PROJECT_DIR$/app/apis/api/ver1/root.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -272,7 +290,9 @@
         <option value="$PROJECT_DIR$/app/models/card.rb" />
         <option value="$PROJECT_DIR$/app/views/cards/index.html.erb" />
         <option value="$PROJECT_DIR$/app/services/card_form_service.rb" />
+        <option value="$PROJECT_DIR$/memo" />
         <option value="$PROJECT_DIR$/spec/services/card_form_service_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" />
       </list>
     </option>
   </component>
@@ -340,7 +360,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="any?&#9;null&#9;null&#10;get_five_cards&#9;null&#9;null&#10;set_card_from_session&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="get_result&#9;null&#9;null&#10;any?&#9;null&#9;null&#10;get_five_cards&#9;null&#9;null&#10;set_card_from_session&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -498,12 +518,12 @@
       <workItem from="1530932376660" duration="5389000" />
       <workItem from="1530954125688" duration="1467000" />
       <workItem from="1530955700183" duration="76212000" />
-      <workItem from="1531964408985" duration="20367000" />
+      <workItem from="1531964408985" duration="27090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347260000" />
+    <option name="totallyTimeSpent" value="353983000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -581,25 +601,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/spec/services/card_form_service_spec.rb</url>
-          <line>376</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/spec/services/card_form_service_spec.rb</url>
-          <line>352</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config.ru">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -797,13 +802,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/images/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/memo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -822,20 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/requests/cards_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -860,13 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionview-5.2.0/lib/action_view/lookup_context.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -874,32 +851,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="122" column="34" selection-start-line="122" selection-start-column="34" selection-end-line="122" selection-end-column="34" />
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/requests/cards_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/services/card_form_service_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="474" column="6" selection-start-line="474" selection-start-column="6" selection-end-line="474" selection-end-column="6" />
+        <state relative-caret-position="29">
+          <caret line="378" column="38" selection-start-line="378" selection-start-column="38" selection-end-line="378" selection-end-column="38" />
           <folding>
-            <element signature="e#4381#4838#0" />
-            <element signature="e#4249#4556#0" />
-            <element signature="e#5408#9348#0" />
-            <element signature="e#9347#10272#0" />
-            <element signature="e#10603#10739#0" />
-            <element signature="e#10627#10644#0" />
-            <element signature="e#11106#11258#0" />
-            <element signature="e#12312#12493#0" />
-            <element signature="e#8042#8094#0" />
-            <element signature="e#12854#13035#0" />
-            <element signature="e#13132#13157#0" />
-            <element signature="e#13885#14216#0" />
-            <element signature="e#13392#13902#0" />
-            <element signature="e#14014#14404#0" />
+            <element signature="e#100#238#0" />
+            <element signature="e#261#399#0" />
+            <element signature="e#419#432#0" />
+            <element signature="e#425#2490#0" />
+            <element signature="e#707#1363#0" />
+            <element signature="e#1398#1681#0" />
+            <element signature="e#2034#2228#0" />
+            <element signature="e#2286#2484#0" />
+            <element signature="e#1470#2133#0" />
+            <element signature="e#2163#2824#0" />
+            <element signature="e#2857#3164#0" />
+            <element signature="e#3190#7101#0" />
+            <element signature="e#7129#8348#0" />
+            <element signature="e#8369#11141#0" />
+            <element signature="e#8464#8657#0" />
+            <element signature="e#8697#10856#0" />
+            <element signature="e#10897#11135#0" />
+            <element signature="e#10919#11127#0" />
+            <element signature="e#11172#11760#0" />
+            <element signature="e#11794#12261#0" />
+            <element signature="e#15537#16122#0" />
+            <element signature="e#15553#15574#0" />
+            <element signature="e#15589#15610#0" />
+            <element signature="e#16009#16030#0" />
+            <element signature="e#16126#16143#0" />
+            <element signature="e#16528#16545#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#860#955#0" />
+            <element signature="e#1013#1119#0" />
+            <element signature="e#1153#1379#0" />
+            <element signature="e#1395#1602#0" />
+            <element signature="e#1350#1660#0" />
+            <element signature="e#1370#1478#0" />
+            <element signature="e#1514#1652#0" />
           </folding>
         </state>
       </provider>

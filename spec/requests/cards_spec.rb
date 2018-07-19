@@ -10,7 +10,6 @@ RSpec.describe "Cards", type: :request do
   let(:request_header) do
     { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
   end
-
   let(:good_cards) do
     '{"cards": ["H1 H13 H12 H11 H10", "H9 C9 S9 H2 C12","C13 D12 C11 H8 H7"]}'
   end
