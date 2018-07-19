@@ -317,11 +317,7 @@ RSpec.describe CardFormService, type: :service do
 
   describe "valid" do
     before do
-      # @errors = {}
-      # @errors = CardFormService.new
       @errors = Card.new.errors()
-      # @errors = Card.errors
-      # @errors = StandardError.new
     end
     it "card_num_valid?メソッドが呼び出される" do
       allow(CardFormService).to receive(:card_num_valid?)
@@ -337,16 +333,8 @@ RSpec.describe CardFormService, type: :service do
       end
       context "first_cardがinvalidのとき" do
         it "errorsにエラーメッセージとカード名が代入される" do
-          # 空ハッシュではなく，デフォルトのerrorsを引数にしないとerrors.addできない
           CardFormService.valid("DD S2 S3 S4 S5","DD","S2","S3","S4","S5",@errors)
-          # expect(CardFormService.errors).to include "1番目のカード指定文字が不正です。 (DD)"
-          # expect(@errors.messages).to include {"1番目のカード指定文字が不正です。 (DD)"}
-          # expect(@errors.messages).to include {"2番目のカード指定文字が不正です。(DD)"} #文字列間違っても通ってしまう
-          # expect(@errors.messages).to include "1番目のカード指定文字が不正です。 (DD)" #値だけだとうまくいかない
           expect(@errors.messages.values[0]).to include "1番目のカード指定文字が不正です。 (DD)"
-          # expect(@errors.messages).to include(/[1番目のカード指定文字が不正です。ddd (DD)]/) #文字列間違っても通ってしまう
-          # expect(@errors.messages).to start_with(/"1番目のカード指定文字が不正です。 (DD)"/)
-          # expect(@errors.messages).to contain_exactly "1番目のカード指定文字が不正です。 (DD)"
         end
       end
       context "second_cardがinvalidのとき" do
@@ -388,44 +376,102 @@ RSpec.describe CardFormService, type: :service do
     context "card_num_validがfalseを返すとき" do
       it "返り値がnil" do
         allow(CardFormService).to receive(:card_num_valid?).and_return false
-        # CardFormService.card_num_valid?("S1 S2 S3 S4 S5",@errors)
         ans = CardFormService.valid("S1 S2 S3 S4 S5","S1","S2","S3","S4","S5",@errors)
-        expect(ans).to eq nil
+        expect(ans).to be_falsy
       end
     end
   end
 
   describe "card_num_valid?" do
+    before do
+      @errors = Card.new.errors()
+    end
     context "all_cardの要素数が5でないとき" do
-      it "errorsにエラーメッセージが代入される"
-      it "falseを返す"
+      before do
+        @ans = CardFormService.card_num_valid?("S1 S2 S3 S4",@errors)
+      end
+      it "errorsにエラーメッセージが代入される" do
+        expect(@errors.messages.values[0]).to include '5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）'
+      end
+      it "falseを返す" do
+        expect(@ans).to be_falsy
+      end
     end
     context "all_cardの要素数が5のとき" do
-      it "trueを返す"
+      it "trueを返す" do
+        expect(CardFormService.card_num_valid?("S1 S2 S3 S4 S5",@errors)).to be_truthy
+      end
     end
   end
 
   describe "card_unique_valid?" do
-    context "all_cardの種類が4以下のとき" do
-      it "errorsにエラーメッセージを代入する"
+    before do
+      @errors = Card.new.errors()
+    end
+    context "all_cardの種類が4以下のとき(カードが重複しているとき)" do
+      it "errorsにエラーメッセージを代入する" do
+        CardFormService.card_unique_valid?("S1 S2 S3 S4 S1",@errors)
+        expect(@errors.messages.values[0]).to include "カードが重複しています。"
+      end
+    end
+    context "all_cardの種類が5つあるとき" do
+      it "nilを返す" do
+        expect(CardFormService.card_unique_valid?("S1 S2 S3 S4 S5",@errors)).to eq nil
+      end
     end
   end
 
   describe "distribute_result_errors" do
-    it "result（空配列）を作る"
-    it "errors（空配列）を作る"
-    it "各カードセットごとに，Cardインスタンスを作成する"
-    it "get_five_cardsメソッドを呼び出す"
+    # letだとうまくいかない
+    # let(:good_cards_params) do
+    #   {cards: ["S1 S2 S3 S4 S5", "H1 H2 H3 H4 H6"]}
+    # end
+    before do
+      @cards_params = {cards: ["S1 S2 S3 S4 S5", "H1 H2 H3 H4 H6"]}
+    end
+    it "result（空配列）を作る"  #いらない
+    it "errors（空配列）を作る"  #いらない
+    it "各カードセットごとに，Cardインスタンスを作成する" #いらない？
+    it "get_five_cardsメソッドを呼び出す" do
+      allow(CardFormService).to receive(:get_five_cards)
+      CardFormService.distribute_result_errors(@cards_params)
+      expect(CardFormService).to have_received(:get_five_cards).twice
+    end
     context "card.saveできたとき" do
-      it "resultの要素nに，{card: #[カードセット]}のハッシュを代入"
+      it "Cardモデルに要素が増える" do
+        expect{CardFormService.distribute_result_errors(@cards_params)}.to change(Card, :count).by(2)
+      end
+      it "resultに，{card: #[カードセット]}のハッシュを代入" do
+        result,  = CardFormService.distribute_result_errors(@cards_params)
+        expect(result).to include({ card: "S1 S2 S3 S4 S5" })
+        expect(result).to include({ card: "H1 H2 H3 H4 H6" })
+      end
     end
     context "card.saveに失敗したとき" do
-      it "errorsの要素nに，{card: #[カードセット]}のハッシュを代入"
-      it "errorsの要素nに，{msg: #[エラーメッセージ]}のハッシュを追加"
+      before do
+        @invalid_cards_params = {cards: ["S1 S2 G4 S4 S5", "", "H1 H2 H3 H4"]}
+        result, @errors  = CardFormService.distribute_result_errors(@invalid_cards_params)
+      end
+      it "errorsに，{card: #[カードセット]}のハッシュを代入" do
+        expect(@errors[0][:card]).to include "S1 S2 G4 S4 S5"
+        expect(@errors[1][:card]).to include ""
+        expect(@errors[2][:card]).to include "H1 H2 H3 H4"
+      end
+      it "errorsの要素nに，{msg: #[エラーメッセージ]}のハッシュを追加" do
+        expect(@errors[0][:msg]).to include "  3番目のカード指定文字が不正です。 (G4)"
+        expect(@errors[1][:msg]).to include "  5つのカード指定文字を半角スペース区切りで入力してください。（例：\"S1 H3 D9 C13 S11\"）"
+        expect(@errors[2][:msg]).to include "  5つのカード指定文字を半角スペース区切りで入力してください。（例：\"S1 H3 D9 C13 S11\"）"
+      end
     end
-    it "result配列からnilを消す"
-    it "errors配列からnilを消す"
-    it "result,errorsを返す"
+    it "result配列にnilがない" do
+      result, errors  = CardFormService.distribute_result_errors({cards: ["S1 S2 G4 S4 S5", "", "H1 H2 H3 H4 H5"]})
+      expect(result).not_to include nil
+    end
+    it "errors配列にnilがない" do
+      result, errors  = CardFormService.distribute_result_errors({cards: ["S1 S2 G4 S4 S5", "", "H1 H2 H3 H4 H5"]})
+      expect(errors).not_to include nil
+    end
+    it "result,errorsを返す" #いらないはず
   end
 
 end
