@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Card, type: :model do
-
     let(:good_card) do
       Card.new({all_card:"S1 S2 S3 S4 S5", first_card: "S1", second_card: "S2", third_card: "S3",
                 fourth_card: "S4", fifth_card: "S5"})
