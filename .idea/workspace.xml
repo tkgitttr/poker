@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/app/models/card.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/card.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/card_form_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/card_form_service.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/cards/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -112,8 +111,8 @@
           <file leaf-file-name="cards_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+                <state relative-caret-position="204">
+                  <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -131,20 +130,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="card_form_service.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="card_form_service.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2176">
-                  <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+                <state relative-caret-position="79">
+                  <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+                <state relative-caret-position="272">
+                  <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -152,8 +151,8 @@
           <file leaf-file-name="card.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models/card.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+                <state relative-caret-position="119">
+                  <caret line="7" selection-start-line="7" selection-end-line="7" />
                 </state>
               </provider>
             </entry>
@@ -188,6 +187,7 @@
       <find>[ind]</find>
       <find>VALID_CARD_REGEX</find>
       <find>url(&quot;../fonts/gly</find>
+      <find>rank</find>
     </findStrings>
     <replaceStrings>
       <replace>@cards</replace>
@@ -201,6 +201,10 @@
       <replace>result</replace>
       <replace>valid_card_regex</replace>
       <replace>url(&quot;../assets/gly</replace>
+      <replace>@suits</replace>
+      <replace>@nums</replace>
+      <replace>@hand</replace>
+      <replace>@rank</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Taka\Desktop\programming\NP\poker\poker\lib\tasks</dir>
@@ -259,10 +263,10 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/models/card_form_service.rb" />
         <option value="$PROJECT_DIR$/tmp/避難/card_form_service.rb" />
-        <option value="$PROJECT_DIR$/app/services/card_form_service.rb" />
-        <option value="$PROJECT_DIR$/app/models/card.rb" />
         <option value="$PROJECT_DIR$/app/views/cards/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/card.rb" />
         <option value="$PROJECT_DIR$/app/controllers/cards_controller.rb" />
+        <option value="$PROJECT_DIR$/app/services/card_form_service.rb" />
       </list>
     </option>
   </component>
@@ -517,7 +521,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323904000" />
+    <option name="totallyTimeSpent" value="327563000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,7 +543,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49016643" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32838285" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48865354" weight="0.28547856" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48865354" visible="true" weight="0.28547856" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.669967" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4965358" weight="0.20347957" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
@@ -879,13 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://8c1f904a-0e66-4415-81ed-cb4faaba352f/schema/main/table/cards">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -893,24 +890,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="153" column="25" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+        <state relative-caret-position="272">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/card.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
         </state>
       </provider>
     </entry>
