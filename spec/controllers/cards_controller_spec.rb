@@ -10,7 +10,7 @@ RSpec.describe CardsController, type: :controller do
   let(:invalid_attributes) do
     {all_card: "S1 S2 S3 S4 S56", first_card: "S1", second_card: "S2",
      third_card: "S3", fourth_card: "S4", fifth_card: "S56"}
-  end
+  end00
 
   let(:valid_session) do
     {all_card: "S1 S2 S3 S4 S5", first_card: "S1", second_card: "S2",

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2eaa158-df22-4a3b-82f9-045985f03771" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/spec/requests/cards_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/cards_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memo" beforeDir="false" afterPath="$PROJECT_DIR$/memo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -66,11 +68,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="memo" pinned="false" current-in-tab="false">
+          <file leaf-file-name="memo" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/memo">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+                <state relative-caret-position="357">
+                  <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
                 </state>
               </provider>
             </entry>
@@ -78,8 +80,8 @@
           <file leaf-file-name="cards_controller_spec.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="680">
-                  <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+                <state relative-caret-position="204">
+                  <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
                   <folding>
                     <element signature="e#860#955#0" />
                     <element signature="e#1013#1119#0" />
@@ -108,11 +110,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cards_spec.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cards_spec.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/requests/cards_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="612">
+                  <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
                   <folding>
                     <element signature="e#2407#2577#0" />
                   </folding>
@@ -170,11 +172,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="card_form_service.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="card_form_service.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-918">
-                  <caret line="11" column="18" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="18" />
+                <state relative-caret-position="51">
+                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
                 </state>
               </provider>
             </entry>
@@ -206,10 +208,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cards.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cards.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="28">
+                <state relative-caret-position="204">
                   <caret line="12" selection-start-line="12" selection-end-line="12" />
                 </state>
               </provider>
@@ -305,12 +307,12 @@
         <option value="$PROJECT_DIR$/app/controllers/cards_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/card.rb" />
         <option value="$PROJECT_DIR$/app/views/cards/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/services/card_form_service.rb" />
-        <option value="$PROJECT_DIR$/memo" />
         <option value="$PROJECT_DIR$/spec/services/card_form_service_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" />
         <option value="$PROJECT_DIR$/spec/models/card_spec.rb" />
         <option value="$PROJECT_DIR$/spec/requests/cards_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb" />
+        <option value="$PROJECT_DIR$/app/services/card_form_service.rb" />
+        <option value="$PROJECT_DIR$/memo" />
       </list>
     </option>
   </component>
@@ -354,32 +356,6 @@
             <path>
               <item name="poker" type="b2602c69:ProjectViewProjectNode" />
               <item name="poker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="apis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="apis" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="apis" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="ver1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="poker" type="b2602c69:ProjectViewProjectNode" />
@@ -569,12 +545,12 @@
       <workItem from="1530932376660" duration="5389000" />
       <workItem from="1530954125688" duration="1467000" />
       <workItem from="1530955700183" duration="76212000" />
-      <workItem from="1531964408985" duration="29243000" />
+      <workItem from="1531964408985" duration="36474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356136000" />
+    <option name="totallyTimeSpent" value="363367000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,7 +572,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49016643" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32838285" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48865354" visible="true" weight="0.28547856" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48865354" weight="0.28547856" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4965358" weight="0.20347957" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
@@ -905,70 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
-          <folding>
-            <element signature="e#860#955#0" />
-            <element signature="e#1013#1119#0" />
-            <element signature="e#1153#1379#0" />
-            <element signature="e#1395#1602#0" />
-            <element signature="e#1350#1660#0" />
-            <element signature="e#1370#1478#0" />
-            <element signature="e#1514#1652#0" />
-            <element signature="e#2329#2586#0" />
-            <element signature="e#2772#2982#0" />
-            <element signature="e#2573#2590#0" />
-            <element signature="e#2921#2969#0" />
-            <element signature="e#2998#3221#0" />
-            <element signature="e#3248#3389#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/card.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/card_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1013,11 +925,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/requests/cards_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="612">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
           <folding>
             <element signature="e#2407#2577#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/apis/api/ver1/cards.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/card.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/cards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/cards/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/cards_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="e#860#955#0" />
+            <element signature="e#1013#1119#0" />
+            <element signature="e#1153#1379#0" />
+            <element signature="e#1395#1602#0" />
+            <element signature="e#1350#1660#0" />
+            <element signature="e#1370#1478#0" />
+            <element signature="e#1514#1652#0" />
+            <element signature="e#2329#2586#0" />
+            <element signature="e#2772#2982#0" />
+            <element signature="e#2573#2590#0" />
+            <element signature="e#2921#2969#0" />
+            <element signature="e#2998#3221#0" />
+            <element signature="e#3248#3389#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/card_form_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
