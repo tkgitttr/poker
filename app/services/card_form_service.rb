@@ -1,5 +1,57 @@
 class CardFormService < ApplicationRecord
 
+  attr_reader :card, :first_card, :second_card, :third_card, :fourth_card, :fifth_card, :result, :error_msg
+
+  def initialize(all_card)
+    @card = all_card
+  end
+
+  def get_five_cards
+    @card.split(" ").each_with_index do |c,ind|
+      @first_card = c if ind == 0
+      @second_card = c if ind == 1
+      @third_card = c if ind == 2
+      @fourth_card = c if ind == 3
+      @fifth_card = c if ind == 4
+    end
+  end
+
+  def get_result
+    # get_five_cards
+    suits, nums = CardFormService.separate_suit_num(@card)
+    @result,  = CardFormService.judge_hand(suits, nums) #rankは不要
+    # save_session(session, card, result)
+    # return @result
+  end
+
+  VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
+  # validate :valid?
+  def valid?
+    #errorを引数で渡す必要があるのか
+    if card_num_valid?
+      @errors_msg = "1番目のカード指定文字が不正です。 (#{@first_card})"  if @first_card  !~ VALID_CARD_REGEX
+      @errors_msg = "2番目のカード指定文字が不正です。 (#{@second_card})" if @second_card !~ VALID_CARD_REGEX
+      @errors_msg = "3番目のカード指定文字が不正です。 (#{@third_card})"  if @third_card  !~ VALID_CARD_REGEX
+      @errors_msg = "4番目のカード指定文字が不正です。 (#{@fourth_card})" if @fourth_card !~ VALID_CARD_REGEX
+      @errors_msg = "5番目のカード指定文字が不正です。 (#{@fifth_card})"  if @fifth_card  !~ VALID_CARD_REGEX
+      # if errors.any?
+      #   errors.add(" ", "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。")
+      # end
+      # CardFormService.card_unique_valid?(all_card,errors)
+    end
+    # Card.errors.add()
+    return false unless @errors_msg.nil?
+  end
+
+  def card_num_valid?
+    if @card.split(" ").length != 5
+      @errors_msg = '5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）'
+      false
+    else
+      true
+    end
+  end
+
   class << self #クラスメソッドを定義していく #or 各ファイルにサービスオブジェクトを作る？
 
   # private #privateにしてわかりやすくするのは一旦あきらめる
@@ -12,16 +64,16 @@ class CardFormService < ApplicationRecord
       save_session(session, card, result)
     end
 
-    def set_card_from_session(session)
-      card = Card.new
-      card[:all_card]    = session[:all_card]
-      card[:first_card]  = session[:first_card]
-      card[:second_card] = session[:second_card]
-      card[:third_card]  = session[:third_card]
-      card[:fourth_card] = session[:fourth_card]
-      card[:fifth_card]  = session[:fifth_card]
-      card #cardを返す
-    end
+    # def set_card_from_session(session)
+    #   card = Card.new
+    #   card[:all_card]    = session[:all_card]
+    #   card[:first_card]  = session[:first_card]
+    #   card[:second_card] = session[:second_card]
+    #   card[:third_card]  = session[:third_card]
+    #   card[:fourth_card] = session[:fourth_card]
+    #   card[:fifth_card]  = session[:fifth_card]
+    #   card #cardを返す
+    # end
 
     def get_five_cards(card)
       card[:all_card].split(" ").each_with_index do |c,ind|
@@ -99,6 +151,7 @@ class CardFormService < ApplicationRecord
         end
         card_unique_valid?(all_card,errors)
       end
+      @error_msg = errors
     end
 
     def card_num_valid?(all_card,errors)
