@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_022331) do
+ActiveRecord::Schema.define(version: 2018_07_22_023735) do
+
+  create_table "card_form_services", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cards", force: :cascade do |t|
     t.string "all_card"
@@ -19,12 +24,6 @@ ActiveRecord::Schema.define(version: 2018_07_02_022331) do
     t.string "third_card"
     t.string "fourth_card"
     t.string "fifth_card"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "hands", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

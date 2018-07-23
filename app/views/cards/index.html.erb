@@ -15,10 +15,10 @@
       check
     </button></p>
 <!--    <%# raise() %>>-->
-    <% if @card.errors.any? %>
+    <% if !@errors.nil?   %>
       <div id="error_explanation">
         <ul>
-          <% @card.errors.full_messages.each do |msg| %>
+          <% @errors.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
         </ul>
