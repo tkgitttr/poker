@@ -33,13 +33,20 @@ class CardFormService < ApplicationRecord
   end
 
   # このメソッドを分解するのが次のタスク
+  # こっちで分解するというよりは，APIでカードを作り直してロジックを再構成する
   def distribute_result_errors(cards_params)
     result =[]
     errors =[]
     cards_params[:cards].each_with_index do |c,ind|
       # modelバリデーションを呼び出す
       card = Card.new(all_card: c)
-      CardFormService.get_five_cards(card)
+      service = CardFormService.new(c)
+      service.get_five_cards
+      card[:first_card] = service.first_card # ２度手間感がすごい
+      card[:second_card] = service.second_card
+      card[:third_card] = service.third_card
+      card[:fourth_card] = service.fourth_card
+      card[:fifth_card] = service.fifth_card
       if card.save
         result[ind] = { card: c }
       else
@@ -116,18 +123,7 @@ class CardFormService < ApplicationRecord
 
   class << self #クラスメソッドを定義していく #or 各ファイルにサービスオブジェクトを作る？
 
-  # private #privateにしてわかりやすくするのは一旦あきらめる
     attr_reader :all_card
-
-    def save_session(session, card, result)
-      session[:all_card]    = card[:all_card]
-      session[:first_card]  = card[:first_card]
-      session[:second_card] = card[:second_card]
-      session[:third_card]  = card[:third_card]
-      session[:fourth_card] = card[:fourth_card]
-      session[:fifth_card]  = card[:fifth_card]
-      session[:result] = result
-    end
 
     # validate :valid #バリデーションをこっちに移行すべき？ クラスメソッドでは不可?
     # DDDはServiceにTable置く？
@@ -142,8 +138,9 @@ class CardFormService < ApplicationRecord
         errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ VALID_CARD_REGEX
         if errors.any?
           errors.add(" ", "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。")
+        else
+          card_unique_valid?(all_card,errors)
         end
-        card_unique_valid?(all_card,errors)
       end
       @error_msg = errors
     end

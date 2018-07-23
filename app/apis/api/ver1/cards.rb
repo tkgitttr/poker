@@ -17,8 +17,24 @@ module API
           @rank   = []
           # @service = []
 
-          #カードを，@resultと@errorsに振り分ける
-          @result, @errors = CardFormService.distribute_result_errors(cards_params)
+          #１．カードをセットごとに分けて，ループに入れる
+          #２．各セットを，@resultと@errorsに振り分ける．card,hand,msgはserviceから入れる
+          #３．resultの中にベスト判定ロジックをこっちで入れる
+
+          cards_params.each do |card|
+            service = CardFormService.new(card)
+            if service.valid? #バリデーションメソッド．まだこの使いかたはできない
+              #resultのメソッド...handを判定してcardとhandを入れる
+            else
+              #errorsのメソッド...cardとエラーメッセージを入れる
+            end
+          end
+
+
+          ############################################################################
+          # @result, @errors = CardFormService.distribute_result_errors(cards_params)
+          service = CardFormService.new()
+          @result, @errors = service.distribute_result_errors(cards_params)
 
           # @resultは分解し，役を判定する
           @result.each_with_index do |r,ind|
@@ -33,6 +49,8 @@ module API
           # indexes = @rank.each_with_index.map{ |v,i| v == @rank.max ? i : nil }.compact
           indexes = @rank.each_with_index.map{ |v,i| v == @rank.max ? i : nil }.compact
           @result.each_with_index{ |r,ind| r[:best] = indexes.include?(ind) ? true : false }
+          ##################################################################################
+
         end
       end
     end
