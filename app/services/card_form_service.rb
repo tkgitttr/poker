@@ -32,6 +32,29 @@ class CardFormService < ApplicationRecord
     return false unless @errors_msg.nil?
   end
 
+  # このメソッドを分解するのが次のタスク
+  def distribute_result_errors(cards_params)
+    result =[]
+    errors =[]
+    cards_params[:cards].each_with_index do |c,ind|
+      # modelバリデーションを呼び出す
+      card = Card.new(all_card: c)
+      CardFormService.get_five_cards(card)
+      if card.save
+        result[ind] = { card: c }
+      else
+        errors[ind] = { card: c }
+        errors[ind][:msg] = card.errors.full_messages
+      end
+      result.compact!
+      errors.compact! #nilを消す
+    end 
+    [result,errors]
+    #resultは，今はcard配列で，hand,bestを後で足す．
+    # errorsはcard,msgの配列
+  end
+
+
   private
 
     def get_five_cards
@@ -138,24 +161,24 @@ class CardFormService < ApplicationRecord
         errors.add(" ", "カードが重複しています。") if all_card.split(" ").uniq.length < 5
     end
 
-    def distribute_result_errors(cards_params)
-      result =[]
-      errors =[]
-      cards_params[:cards].each_with_index do |c,ind|
-        # modelバリデーションを呼び出す
-        card = Card.new(all_card: c)
-        CardFormService.get_five_cards(card)
-        if card.save
-          result[ind] = { card: c }
-        else
-          errors[ind] = { card: c }
-          errors[ind][:msg] = card.errors.full_messages
-        end
-        result.compact!
-        errors.compact! #nilを消す
-      end
-      [result,errors]
-    end
+    # def distribute_result_errors(cards_params)
+    #   result =[]
+    #   errors =[]
+    #   cards_params[:cards].each_with_index do |c,ind|
+    #     # modelバリデーションを呼び出す
+    #     card = Card.new(all_card: c)
+    #     CardFormService.get_five_cards(card)
+    #     if card.save
+    #       result[ind] = { card: c }
+    #     else
+    #       errors[ind] = { card: c }
+    #       errors[ind][:msg] = card.errors.full_messages
+    #     end
+    #     result.compact!
+    #     errors.compact! #nilを消す
+    #   end
+    #   [result,errors]
+    # end
 
   end
 end
