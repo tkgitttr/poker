@@ -1,6 +1,6 @@
 class CardFormService < ApplicationRecord
 
-  attr_reader :card, :first_card, :second_card, :third_card, :fourth_card, :fifth_card, :hand, :error_msg
+  attr_reader :card, :first_card, :second_card, :third_card, :fourth_card, :fifth_card, :hand, :rank, :error_msg
 
   def initialize(all_card)
     @card = all_card
