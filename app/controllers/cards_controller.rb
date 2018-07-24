@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-  # service = CardFormService.new(session[:all_card])
 
   def index
     # session.clear #debug
