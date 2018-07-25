@@ -13,43 +13,10 @@ class CardFormService < ApplicationRecord
     judge_hand
   end
 
-  VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
-  # validate :valid?
-  def valid?
-    #errorを引数で渡す必要があるのか
-    if card_num_valid?
-      # @error_msgを配列にする必要あり
-      @error_msg =[]
-      @error_msg << "1番目のカード指定文字が不正です。 (#{@first_card})"  if @first_card  !~ VALID_CARD_REGEX
-      @error_msg << "2番目のカード指定文字が不正です。 (#{@second_card})" if @second_card !~ VALID_CARD_REGEX
-      @error_msg << "3番目のカード指定文字が不正です。 (#{@third_card})"  if @third_card  !~ VALID_CARD_REGEX
-      @error_msg << "4番目のカード指定文字が不正です。 (#{@fourth_card})" if @fourth_card !~ VALID_CARD_REGEX
-      @error_msg << "5番目のカード指定文字が不正です。 (#{@fifth_card})"  if @fifth_card  !~ VALID_CARD_REGEX
-
-      # card = Card.new()
-      # card.errors.add("", @errors_msg)
-      errors.add("", @error_msg)
-
-      # if errors.any?
-      if !@error_msg.empty?
-        @error_msg << "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"
-        false
-      else
-        # true
-        card_unique_valid?
-      end
-    end
-
-    # Card.errors.add()
-    #  unless @erfalserors_msg.nil?
-    # false
-  end
-
   def save
     if valid?
       true
     else
-      # @errors_msg << "error!!!!!"
       false
     end
   end
@@ -69,6 +36,33 @@ class CardFormService < ApplicationRecord
     def separate_suit_num
       @suits = @card.split(" ").map{ |c| c[0] }
       @nums = @card.split(" ").map{ |c| c[1..-1].to_i }
+    end
+
+    VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
+    # validate :valid?
+    def valid?
+      #errorを引数で渡す必要があるのか
+      if card_num_valid?
+        # @error_msgを配列にする必要あり
+        @error_msg =[]
+        @error_msg << "1番目のカード指定文字が不正です。 (#{@first_card})"  if @first_card  !~ VALID_CARD_REGEX
+        @error_msg << "2番目のカード指定文字が不正です。 (#{@second_card})" if @second_card !~ VALID_CARD_REGEX
+        @error_msg << "3番目のカード指定文字が不正です。 (#{@third_card})"  if @third_card  !~ VALID_CARD_REGEX
+        @error_msg << "4番目のカード指定文字が不正です。 (#{@fourth_card})" if @fourth_card !~ VALID_CARD_REGEX
+        @error_msg << "5番目のカード指定文字が不正です。 (#{@fifth_card})"  if @fifth_card  !~ VALID_CARD_REGEX
+
+        # card = Card.new()
+        # card.errors.add("", @errors_msg)
+        errors.add("", @error_msg)
+
+        # if errors.any?
+        if !@error_msg.empty?
+          @error_msg << "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"
+          false
+        else
+          card_unique_valid?
+        end
+      end
     end
 
     def card_num_valid?
@@ -124,43 +118,4 @@ class CardFormService < ApplicationRecord
         @rank = 1
       end
     end
-
-  class << self #クラスメソッドを定義していく #or 各ファイルにサービスオブジェクトを作る？
-
-    # attr_reader :all_card
-    #
-    # # validate :valid #バリデーションをこっちに移行すべき？ クラスメソッドでは不可?
-    # # DDDはServiceにTable置く？
-    # VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
-    # def valid(all_card,first_card,second_card,third_card,fourth_card,fifth_card,errors)
-    #   #errorを引数で渡す必要があるのか
-    #   if card_num_valid?(all_card,errors)
-    #     errors.add(" ", "1番目のカード指定文字が不正です。 (#{first_card})")  if first_card  !~ VALID_CARD_REGEX
-    #     errors.add(" ", "2番目のカード指定文字が不正です。 (#{second_card})") if second_card !~ VALID_CARD_REGEX
-    #     errors.add(" ", "3番目のカード指定文字が不正です。 (#{third_card})")  if third_card  !~ VALID_CARD_REGEX
-    #     errors.add(" ", "4番目のカード指定文字が不正です。 (#{fourth_card})") if fourth_card !~ VALID_CARD_REGEX
-    #     errors.add(" ", "5番目のカード指定文字が不正です。 (#{fifth_card})")  if fifth_card  !~ VALID_CARD_REGEX
-    #     if errors.any?
-    #       errors.add(" ", "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。")
-    #     else
-    #       card_unique_valid?(all_card,errors)
-    #     end
-    #   end
-    #   @error_msg = errors
-    # end
-    #
-    # def card_num_valid?(all_card,errors)
-    #   if all_card.split(" ").length != 5
-    #     errors.add(" ",'5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）')
-    #     false
-    #   else
-    #     true
-    #   end
-    # end
-    #
-    # def card_unique_valid?(all_card,errors)
-    #     errors.add(" ", "カードが重複しています。") if all_card.split(" ").uniq.length < 5
-    # end
-
-  end
 end

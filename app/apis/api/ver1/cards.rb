@@ -28,7 +28,7 @@ module API
             else
               #errorsのメソッド...cardとエラーメッセージを入れる
               @errors[ind] = {card: c}
-              @errors[ind][:msg] = card.errors.full_messages
+              @errors[ind][:msg] = card.errors.full_messages #配列になって，かつエスケープされてしまう
             end
           end
           @results.compact!
