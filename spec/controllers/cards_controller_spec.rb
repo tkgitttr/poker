@@ -36,7 +36,10 @@ RSpec.describe CardsController, type: :controller do
       it "cardにセッションが保存されている" do
         expect(controller.instance_variable_get("@card")).to eq session[:card]
       end
-      context "@card.saveが成功したとき" do
+      context "service.saveが成功したとき" do
+        it "Cardモデルにデータが１つ増えている" do
+          expect{CardFormService.distribute_result_errors(good_cards_params)}.to change(Card, :count).by(1)
+        end
         it "resultにsessionが保存されている" do
           card = Card.new(valid_attributes)
           expect(card.save).to be_truthy
@@ -44,7 +47,7 @@ RSpec.describe CardsController, type: :controller do
           expect(controller.instance_variable_get("@result")).to eq session[:result]
         end
       end
-      context "@card.saveが失敗したとき" do
+      context "service.saveが失敗したとき" do
         it "resultにsessionが保存されていない" do
           card = Card.new(invalid_attributes)
           expect(card.save).to be_falsey

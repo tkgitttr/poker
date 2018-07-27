@@ -12,9 +12,6 @@ class CardsController < ApplicationController
   end
 
   def create
-    # @card = Card.new
-    # @card[:all_card] = card_params[:all_card] if card_params
-    # service = CardFormService.new(card_params[:all_card])
     service = CardFormService.new(card_params[:all_card]) if card_params
     if service.save
       session[:result] = service.hand
