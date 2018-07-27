@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2018_07_22_023735) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hands", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hoges", force: :cascade do |t|
     t.string "name"
     t.string "string"

@@ -5,10 +5,6 @@ class CardFormService < ApplicationRecord
   def initialize(all_card)
     @card = all_card
     get_five_cards
-    get_result
-  end
-
-  def get_result
     separate_suit_num
     judge_hand
   end
@@ -41,11 +37,8 @@ class CardFormService < ApplicationRecord
     end
 
     VALID_CARD_REGEX = /[CDHS]([1-9]|1[0-3])\z/ #CDHSのいずれか+1~13までの数字
-    # validate :valid?
     def valid?
-      #errorを引数で渡す必要があるのか
       if card_num_valid?
-        # @error_msgを配列にする必要あり
         @error_msg =[]
         @error_msg << "1番目のカード指定文字が不正です。 (#{@first_card})"  if @first_card  !~ VALID_CARD_REGEX
         @error_msg << "2番目のカード指定文字が不正です。 (#{@second_card})" if @second_card !~ VALID_CARD_REGEX
@@ -53,11 +46,6 @@ class CardFormService < ApplicationRecord
         @error_msg << "4番目のカード指定文字が不正です。 (#{@fourth_card})" if @fourth_card !~ VALID_CARD_REGEX
         @error_msg << "5番目のカード指定文字が不正です。 (#{@fifth_card})"  if @fifth_card  !~ VALID_CARD_REGEX
 
-        # card = Card.new()
-        # card.errors.add("", @errors_msg)
-        # errors.add("", @error_msg)
-
-        # if errors.any?
         if !@error_msg.empty?
           @error_msg << "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"
           false
@@ -69,9 +57,7 @@ class CardFormService < ApplicationRecord
 
     def card_num_valid?
       if @card.split(" ").length != 5
-        @error_msg ||= []
-        @error_msg << '5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）'
-        # errors.add("", @error_msg)
+        @error_msg = ['5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）']
         false
       else
         true

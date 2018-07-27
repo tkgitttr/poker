@@ -55,7 +55,7 @@ RSpec.describe "API::Ver1::Cards", type: :request do
         expect(body["result"][1]["hand"]).to eq "ハイカード"
         expect(body["result"][1]["best"]).to eq false
         expect(body["error"][0]["card"]).to eq "H9 C9 S95 G2 C12"
-        expect(body["error"][0]["msg"]).to eq ["  3番目のカード指定文字が不正です。 (S95)","  4番目のカード指定文字が不正です。 (G2)","  半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"]
+        expect(body["error"][0]["msg"]).to eq ["3番目のカード指定文字が不正です。 (S95)","4番目のカード指定文字が不正です。 (G2)","半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"]
       end
       it "正しいCardセットの数だけCardレコードが増える" do
         expect {
