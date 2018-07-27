@@ -15,16 +15,9 @@ class CardsController < ApplicationController
     @card = Card.new
     @card[:all_card] = card_params[:all_card] if card_params
     service = CardFormService.new(card_params[:all_card])
-    if service.save
-      session[:result]= service.hand
-      session[:card_errors] = nil
-    else #失敗したとき．エラーを返す
-      session[:result] = ""
-      session[:card_errors] = service.error_msg
-    end
-    #indexに渡すためにsessionに保存
+    session[:result]= service.save ? service.hand : ""
+    session[:card_errors] = service.save ? nil : service.error_msg
     session[:all_card] = service.card
-
     redirect_to root_path
   end
 
