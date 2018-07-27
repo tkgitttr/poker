@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-# before do
-#   #Factory.Botがうまく使えないため，ベタ打ちで
-#   @params = FactoryBot.attributes_for(:good_cards)
-# end
-
 RSpec.describe "API::Ver1::Cards", type: :request do
   let(:request_header) do
     { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }

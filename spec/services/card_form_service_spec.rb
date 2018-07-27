@@ -40,24 +40,6 @@ RSpec.describe CardFormService, type: :service do
       expect(@service.instance_variable_get("@hand")).to eq "ストレートフラッシュ"
       expect(@service.instance_variable_get("@rank")).to eq 9
     end
-    #メソッドを呼び出す方針ではなく，結果を確認する方針に変更
-    # it "get_five_cardsメソッドを呼ぶ" do
-    #   allow(CardFormService).to receive(:get_five_cards)
-    #   # allow(service).to receive(:get_five_cards)
-    #   # service_mock = double('CardFormService')
-    #   service = CardFormService.new(valid_attributes[:all_card])
-    #   # expect(service).to receive(:get_five_cards)
-    #   expect(CardFormService).to receive(:get_five_cards).once
-    #   # expect(service).to have_received(:get_five_cards).once
-    #   # expect(service).to receive(:get_five_cards)
-    #   # expect(service).to receive(service.send(:get_five_cards))
-    #   # expect(service.send(:get_five_cards)).not_to eq nil #この書き方の場合
-    #   # expect(service.send(:separate_suit_num)).not_to eq nil #これも通ってしまう
-    #   # expect(CardFormService.new(valid_attributes[:all_card])).to receive(:get_five_cards) #呼び出し０回
-    #   # expect(service.send(:separate_suit_num)).to eq nil
-    #   # expect(service_mock).to receive(:get_five_cards)
-    # end
-    # it "get_resultメソッドを呼ぶ"
   end
 
   describe "save" do
@@ -134,14 +116,6 @@ RSpec.describe CardFormService, type: :service do
           expect(service.error_msg).to include "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"
         end
       end
-      # context "first_card~fifth_cardのいずれかがinvalidのとき" do
-      #   it "errorsにエラーメッセージが追加される" do
-      #     service = CardFormService.new("S1 S2 S3 S4 f")
-      #     service.send(:valid?)
-      #     expect(service.error_msg).to include "半角英字大文字のスート（S,H,D,C）と数字（1〜13）の組み合わせでカードを指定してください。"
-      #   end
-      # end
-
       context "個々のカードにはエラーが出ていないとき" do
         context "card_unique_validがtrueのとき" do
           it "trueを返す" do
@@ -158,17 +132,9 @@ RSpec.describe CardFormService, type: :service do
           end
         end
       end
-      # it "card_unique_valid?メソッドが呼び出される" do
-      #   allow(CardFormService).to receive(:card_unique_valid?)
-      #   CardFormService.valid("S1 S2 S3 S4 S5","S1","S2","S3","S4","S5",@errors)
-      #   expect(CardFormService).to have_received(:card_unique_valid?).once
-      # end
     end
     context "card_num_valid?がfalseを返すとき" do
       it "返り値がnil" do
-        # allow(CardFormService).to receive(:card_num_valid?).and_return false
-        # ans = CardFormService.valid("S1 S2 S3 S4 S5","S1","S2","S3","S4","S5",@errors)
-        # expect(ans).to be_falsy
         service = CardFormService.new("S1 S2 S3 S4")
         expect(service.send(:valid?)).to eq nil
       end
