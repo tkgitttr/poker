@@ -12,11 +12,17 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new
-    @card[:all_card] = card_params[:all_card] if card_params
-    service = CardFormService.new(card_params[:all_card])
-    session[:result]= service.save ? service.hand : ""
-    session[:card_errors] = service.save ? nil : service.error_msg
+    # @card = Card.new
+    # @card[:all_card] = card_params[:all_card] if card_params
+    # service = CardFormService.new(card_params[:all_card])
+    service = CardFormService.new(card_params[:all_card]) if card_params
+    if service.save
+      session[:result] = service.hand
+      session[:card_errors] = nil
+    else
+      session[:result] = ""
+      session[:card_errors] = service.error_msg
+    end
     session[:all_card] = service.card
     redirect_to root_path
   end
