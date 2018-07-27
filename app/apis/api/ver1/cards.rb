@@ -26,7 +26,7 @@ module API
               rank[ind] = service.rank
             else
               @errors[ind] = {card: c}
-              @errors[ind][:msg] = service.error_msg[0]
+              @errors[ind][:msg] = service.error_msg
             end
           end
           @results.compact!
