@@ -15,6 +15,8 @@ class CardFormService < ApplicationRecord
 
   def save
     if valid?
+      card_set = Card.new({all_card: @card, first_card: @first_card, second_card: @second_card, third_card: @third_card, fourth_card: @fourth_card, fifth_card: @fifth_card })
+      card_set.save
       true
     else
       false
@@ -53,7 +55,7 @@ class CardFormService < ApplicationRecord
 
         # card = Card.new()
         # card.errors.add("", @errors_msg)
-        errors.add("", @error_msg)
+        # errors.add("", @error_msg)
 
         # if errors.any?
         if !@error_msg.empty?
@@ -69,7 +71,7 @@ class CardFormService < ApplicationRecord
       if @card.split(" ").length != 5
         @error_msg ||= []
         @error_msg << '5つのカード指定文字を半角スペース区切りで入力してください。（例："S1 H3 D9 C13 S11"）'
-        errors.add("", @error_msg)
+        # errors.add("", @error_msg)
         false
       else
         true

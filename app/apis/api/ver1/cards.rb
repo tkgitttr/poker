@@ -19,8 +19,7 @@ module API
           rank   = []
           cards_params[:cards].each_with_index do |c, ind|
             service = CardFormService.new(c)
-            card = Card.new({all_card: service.card, first_card: service.first_card, second_card: service.second_card, third_card: service.third_card, fourth_card: service.fourth_card, fifth_card: service.fifth_card })
-            if card.save
+            if service.save
               #resultのメソッド...handを判定してcardとhandを入れる
               @results[ind] = { card: c }
               @results[ind][:hand] = service.hand
@@ -28,7 +27,7 @@ module API
             else
               #errorsのメソッド...cardとエラーメッセージを入れる
               @errors[ind] = {card: c}
-              @errors[ind][:msg] = card.errors.full_messages #配列になって，かつエスケープされてしまう
+              @errors[ind][:msg] = service.error_msg[0] #配列になって，かつエスケープされてしまう
             end
           end
           @results.compact!
