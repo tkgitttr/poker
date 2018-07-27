@@ -5,10 +5,6 @@ class CardFormService < ApplicationRecord
   def initialize(all_card)
     @card = all_card
     get_five_cards
-    get_result
-  end
-
-  def get_result
     separate_suit_num
     judge_hand
   end
