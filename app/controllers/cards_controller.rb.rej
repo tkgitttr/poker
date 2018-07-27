@@ -1,0 +1,11 @@
+diff a/app/controllers/cards_controller.rb b/app/controllers/cards_controller.rb	(rejected hunks)
+@@ -12,9 +12,6 @@
+   end
+ 
+   def create
+-    # @card = Card.new
+-    # @card[:all_card] = card_params[:all_card] if card_params
+-    # service = CardFormService.new(card_params[:all_card])
+     service = CardFormService.new(card_params[:all_card]) if card_params
+     if service.save
+       session[:result] = service.hand

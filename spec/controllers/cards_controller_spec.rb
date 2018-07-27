@@ -64,9 +64,6 @@ RSpec.describe CardsController, type: :controller do
       before do
         post :create, params: {card: valid_attributes}
       end
-      it ":all_card にparams が代入される" do
-        expect(controller.instance_variable_get("@card")[:all_card]).to eq "S1 S2 S3 S4 S5"
-      end
       it "service.saveが成功する" do
         service = CardFormService.new(valid_attributes[:all_card])
         expect(service.save).to eq true
@@ -84,9 +81,6 @@ RSpec.describe CardsController, type: :controller do
     context "invalid paramが送られてきたとき" do
       before do
         post :create, params: {card: invalid_attributes}
-      end
-      it ":all_card にparams が代入されない" do
-        expect(controller.instance_variable_get("@card")[:all_card]).not_to eq "S1 S2 S3 S4 S5"
       end
       it "service.saveが失敗する" do
         service = CardFormService.new(invalid_attributes[:all_card])
