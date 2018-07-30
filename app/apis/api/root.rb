@@ -8,7 +8,7 @@ module API
 
     helpers do
       def my_error!(message)
-        error!("error":[{"msg": message}])
+        error!({"error":[{"msg": message}]},404)
       end
     end
 
@@ -21,6 +21,9 @@ module API
 
     # 404NotFoundの扱い mountの後に記述する必要あり
     route :any, '*path' do
+      my_error!("不正なURLです．")
+    end
+    route :any  do
       my_error!("不正なURLです．")
     end
   end

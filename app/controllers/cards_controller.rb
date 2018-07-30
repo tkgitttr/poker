@@ -17,7 +17,7 @@ class CardsController < ApplicationController
       session[:result] = service.hand
       session[:card_errors] = nil
     else
-      session[:result] = ""
+      # session[:result] = ""
       session[:card_errors] = service.error_msg
     end
     session[:all_card] = service.card
