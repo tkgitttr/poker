@@ -1,0 +1,25 @@
+current directory: /Users/k.takahiro/RubymineProjects/poker/vendor/bundle/ruby/2.3.0/gems/duktape-2.0.1.0/ext/duktape
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -r ./siteconf20180730-83719-1e9pu00.rb extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/k.takahiro/RubymineProjects/poker/vendor/bundle/ruby/2.3.0/extensions/universal-darwin-17/2.3.0/duktape-2.0.1.0/mkmf.log
+
+current directory: /Users/k.takahiro/RubymineProjects/poker/vendor/bundle/ruby/2.3.0/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" clean
+
+current directory: /Users/k.takahiro/RubymineProjects/poker/vendor/bundle/ruby/2.3.0/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR="
+compiling duktape.c
+compiling duktape_ext.c
+linking shared-object duktape_ext.bundle
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/libressl/lib'
+ld: warning: directory not found for option '-L/BuildRoot/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.Internal.sdk/usr/local/lib'
+
+current directory: /Users/k.takahiro/RubymineProjects/poker/vendor/bundle/ruby/2.3.0/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 duktape_ext.bundle ./.gem.20180730-83719-c0q05w
